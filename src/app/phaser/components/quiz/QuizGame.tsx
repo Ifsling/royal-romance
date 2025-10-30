@@ -11,8 +11,8 @@ import {
 import {
   SortableContext,
   arrayMove,
+  rectSortingStrategy,
   useSortable,
-  verticalListSortingStrategy,
 } from "@dnd-kit/sortable"
 import { CSS } from "@dnd-kit/utilities"
 import { useEffect, useMemo, useState } from "react"
@@ -52,7 +52,7 @@ function pieceUrl(setIdx: number, pieceIndex0to8: number) {
   }.jpeg`
 }
 
-// ---- DnD Sortable Tile ----
+// Sortable wrapper
 function SortableTile({
   id,
   children,
@@ -64,10 +64,7 @@ function SortableTile({
 }) {
   const { attributes, listeners, setNodeRef, transform, transition } =
     useSortable({ id, disabled })
-  const style = {
-    transform: CSS.Transform.toString(transform),
-    transition,
-  }
+  const style = { transform: CSS.Transform.toString(transform), transition }
   return (
     <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
       {children}
@@ -82,17 +79,13 @@ export default function QuizPage() {
 
   const [setIdx, setSetIdx] = useState(0)
   const [unlocks, setUnlocks] = useState<boolean[]>(Array(9).fill(false))
-  const [failed, setFailed] = useState<boolean[]>(Array(9).fill(false)) // session-only, no retry
+  const [failed, setFailed] = useState<boolean[]>(Array(9).fill(false))
   const [activeTile, setActiveTile] = useState<number | null>(null)
   const [qIdx, setQIdx] = useState(0)
   const [correctCount, setCorrectCount] = useState(0)
 
-  // drag order of positions (0..8 corresponds to grid slots)
-  const [tileOrder, setTileOrder] = useState<number[]>(
-    [...Array(9).keys()] // default 0..8
-  )
+  const [tileOrder, setTileOrder] = useState<number[]>([...Array(9).keys()])
 
-  // DnD sensors
   const sensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 6 } })
   )
@@ -128,7 +121,6 @@ export default function QuizPage() {
       const parsed = JSON.parse(raw) as Record<string, boolean[]>
       if (parsed[String(setIdx)]) setUnlocks(parsed[String(setIdx)])
     } catch {}
-    // reset per-session failed + ordering when changing set
     setFailed(Array(9).fill(false))
     setTileOrder([...Array(9).keys()])
     setActiveTile(null)
@@ -167,25 +159,21 @@ export default function QuizPage() {
     const q = currentGroup.questions[qIdx]
     const isCorrect = optIdx === q.correct
 
-    // wrong => instant fail, close, no retry this session
     if (!isCorrect) {
       const f = failed.slice()
       f[activeTile!] = true
       setFailed(f)
-      // close modal
       setActiveTile(null)
       setQIdx(0)
       setCorrectCount(0)
       return
     }
 
-    // correct path
     const nextCorrect = correctCount + 1
     if (qIdx < 2) {
       setCorrectCount(nextCorrect)
       setQIdx(qIdx + 1)
     } else {
-      // third correct => unlock tile
       if (nextCorrect >= 3) {
         const next = unlocks.slice()
         next[activeTile!] = true
@@ -207,9 +195,18 @@ export default function QuizPage() {
     setTileOrder([...Array(9).keys()])
   }
 
+  // Dev unlock button
+  const unlockAllDev = () => {
+    const all = Array(9).fill(true)
+    saveUnlocks(all)
+    setFailed(Array(9).fill(false))
+    setActiveTile(null)
+    setQIdx(0)
+    setCorrectCount(0)
+  }
+
   const allUnlocked = unlocks.every(Boolean)
 
-  // DnD handlers (enabled only when allUnlocked)
   const onDragEnd = (event: DragEndEvent) => {
     if (!allUnlocked) return
     const { active, over } = event
@@ -257,7 +254,7 @@ export default function QuizPage() {
         </div>
 
         {/* Set selector */}
-        <div className="flex flex-wrap gap-2 mb-6">
+        <div className="flex flex-wrap items-center gap-2 mb-6">
           {data!.sets.map((s, i) => (
             <button
               key={i}
@@ -271,15 +268,27 @@ export default function QuizPage() {
               {s.title || `Set ${i + 1}`}
             </button>
           ))}
-          <button
-            onClick={resetProgress}
-            className="ml-auto px-3 py-2 rounded-lg border border-white/20 bg-white/5 hover:bg-white/10"
-          >
-            Reset
-          </button>
+
+          <div className="ml-auto flex items-center gap-2">
+            <button
+              onClick={resetProgress}
+              className="px-3 py-2 rounded-lg border border-white/20 bg-white/5 hover:bg-white/10"
+            >
+              Reset
+            </button>
+            {/* Dev Unlock — visible only in dev */}
+            {process.env.NODE_ENV === "development" && (
+              <button
+                onClick={unlockAllDev}
+                className="px-3 py-2 rounded-lg border border-emerald-400/40 bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-200"
+              >
+                Dev: Unlock All
+              </button>
+            )}
+          </div>
         </div>
 
-        {/* Question above grid */}
+        {/* Question */}
         {activeTile !== null && currentGroup && (
           <div className="bg-stone-900/70 border border-white/10 rounded-2xl p-5 mb-6">
             <div className="flex items-center justify-between mb-3">
@@ -288,7 +297,6 @@ export default function QuizPage() {
               </div>
               <button
                 onClick={() => {
-                  // cancel = forfeit attempt on this run
                   const f = failed.slice()
                   f[activeTile] = true
                   setFailed(f)
@@ -322,7 +330,7 @@ export default function QuizPage() {
           </div>
         )}
 
-        {/* Grid + progress */}
+        {/* Grid */}
         <div className="grid md:grid-cols-[2fr,1fr] gap-6">
           <div className="bg-white/5 border border-white/10 rounded-2xl p-5">
             <h2 className="text-lg font-semibold opacity-90 mb-3">
@@ -335,9 +343,8 @@ export default function QuizPage() {
               onDragEnd={onDragEnd}
             >
               <SortableContext
-                // use ids as the "display order"; ids are tile indices 0..8
                 items={tileOrder.map((i) => String(i))}
-                strategy={verticalListSortingStrategy}
+                strategy={rectSortingStrategy}
               >
                 <div className="grid grid-cols-3 gap-2 sm:gap-3">
                   {tileOrder.map((posIdx) => {
@@ -345,7 +352,7 @@ export default function QuizPage() {
                     const isFailed = failed[posIdx]
                     const mapped = pieceMap[posIdx]
                     const url = pieceUrl(setIdx, mapped)
-                    const canDrag = isUnlocked && unlocks.every(Boolean) // only when all unlocked
+                    const canDrag = isUnlocked && unlocks.every(Boolean)
                     const disabled = !canDrag
 
                     return (
@@ -357,20 +364,23 @@ export default function QuizPage() {
                         <button
                           onClick={() => startTile(posIdx)}
                           disabled={isUnlocked || isFailed}
-                          className={`relative aspect-square w-full rounded-xl overflow-hidden border ${
+                          className={`relative w-full rounded-xl overflow-hidden border transition-all ${
                             isUnlocked
                               ? "border-emerald-400 ring-2 ring-emerald-400/40 cursor-grab active:cursor-grabbing"
                               : isFailed
                               ? "border-red-400 ring-2 ring-red-400/30"
                               : "border-white/15 hover:border-white/40 hover:bg-white/5"
                           }`}
+                          style={{
+                            aspectRatio: "360 / 541", // keep original image shape
+                          }}
                         >
                           <div className="absolute inset-0 bg-black/50">
                             {isUnlocked ? (
                               <img
                                 src={url}
                                 alt={`Piece ${mapped + 1}`}
-                                className="w-full h-full object-cover"
+                                className="w-full h-full object-contain"
                               />
                             ) : isFailed ? (
                               <div className="w-full h-full grid place-items-center">
@@ -425,12 +435,11 @@ export default function QuizPage() {
               </p>
             ) : (
               <p className="mt-3 text-white/60 text-xs">
-                Unlock all 9 to enable drag & drop rearranging.
+                Unlock all 9 to enable drag &amp; drop rearranging.
               </p>
             )}
           </div>
 
-          {/* Progress */}
           <aside className="bg-white/5 border border-white/10 rounded-2xl p-5">
             <h3 className="text-lg font-semibold mb-3">Progress</h3>
             <div className="text-sm opacity-80 mb-2">
