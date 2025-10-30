@@ -1,4 +1,4 @@
-import Phaser from "phaser"
+import * as Phaser from "phaser"
 
 const UI_BAR_H = 48
 const RIGHT_PANEL_W = 280

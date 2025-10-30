@@ -1,32 +1,42 @@
 {
-    "Map/SizeTest": {
-        "height": 4300,
-        "width": 2
-    },
-    "activeFile": "",
+    "activeFile": "maze-map.tmj",
     "expandedProjectPaths": [
     ],
     "fileStates": {
+        "": {
+            "scaleInDock": 1
+        },
+        "maze-map.tmj": {
+            "scale": 0.053516666666666664,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 7492.992837122392,
+                "y": 7492.992837122391
+            }
+        },
+        "maze-map.tmj#tileset": {
+            "scaleInDock": 0.3982
+        },
         "tileset.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 0.58
         }
     },
     "last.imagePath": "/Users/ayus/Documents/z_PROGRAMMING/Website Development/youtube/three-adult-games/public/tilemap",
-    "map.height": 50,
-    "map.tileHeight": 100,
-    "map.tileWidth": 100,
-    "map.width": 50,
+    "map.lastUsedFormat": "json",
+    "map.tileHeight": 300,
+    "map.tileWidth": 300,
     "openFiles": [
+        "maze-map.tmj"
     ],
     "project": "maze.tiled-project",
     "recentFiles": [
+        "maze-map.tmj",
         "tileset.tsx"
     ],
-    "tileset.lastUsedFormat": "tsx",
-    "tileset.margin": 15,
+    "tileset.embedInMap": true,
     "tileset.tileSize": {
-        "height": 200,
-        "width": 200
+        "height": 300,
+        "width": 300
     }
 }
