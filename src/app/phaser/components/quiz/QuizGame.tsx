@@ -1,5 +1,20 @@
 "use client"
 
+import {
+  DndContext,
+  DragEndEvent,
+  PointerSensor,
+  closestCenter,
+  useSensor,
+  useSensors,
+} from "@dnd-kit/core"
+import {
+  SortableContext,
+  arrayMove,
+  useSortable,
+  verticalListSortingStrategy,
+} from "@dnd-kit/sortable"
+import { CSS } from "@dnd-kit/utilities"
 import { useEffect, useMemo, useState } from "react"
 
 type QA = { q: string; a: string[]; correct: number }
@@ -18,7 +33,7 @@ const imageDirs = [
   "image-six",
 ]
 
-// consistent shuffle for piece indexes
+// deterministic shuffle
 function shuffledNine(seed: number) {
   const arr = [...Array(9).keys()]
   let s = seed || 1
@@ -37,6 +52,29 @@ function pieceUrl(setIdx: number, pieceIndex0to8: number) {
   }.jpeg`
 }
 
+// ---- DnD Sortable Tile ----
+function SortableTile({
+  id,
+  children,
+  disabled,
+}: {
+  id: string
+  children: React.ReactNode
+  disabled?: boolean
+}) {
+  const { attributes, listeners, setNodeRef, transform, transition } =
+    useSortable({ id, disabled })
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+  }
+  return (
+    <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
+      {children}
+    </div>
+  )
+}
+
 export default function QuizPage() {
   const [data, setData] = useState<QuizPayload | null>(null)
   const [loading, setLoading] = useState(true)
@@ -44,8 +82,20 @@ export default function QuizPage() {
 
   const [setIdx, setSetIdx] = useState(0)
   const [unlocks, setUnlocks] = useState<boolean[]>(Array(9).fill(false))
+  const [failed, setFailed] = useState<boolean[]>(Array(9).fill(false)) // session-only, no retry
   const [activeTile, setActiveTile] = useState<number | null>(null)
   const [qIdx, setQIdx] = useState(0)
+  const [correctCount, setCorrectCount] = useState(0)
+
+  // drag order of positions (0..8 corresponds to grid slots)
+  const [tileOrder, setTileOrder] = useState<number[]>(
+    [...Array(9).keys()] // default 0..8
+  )
+
+  // DnD sensors
+  const sensors = useSensors(
+    useSensor(PointerSensor, { activationConstraint: { distance: 6 } })
+  )
 
   useEffect(() => {
     const load = async () => {
@@ -78,6 +128,12 @@ export default function QuizPage() {
       const parsed = JSON.parse(raw) as Record<string, boolean[]>
       if (parsed[String(setIdx)]) setUnlocks(parsed[String(setIdx)])
     } catch {}
+    // reset per-session failed + ordering when changing set
+    setFailed(Array(9).fill(false))
+    setTileOrder([...Array(9).keys()])
+    setActiveTile(null)
+    setQIdx(0)
+    setCorrectCount(0)
   }, [setIdx])
 
   const saveUnlocks = (next: boolean[]) => {
@@ -100,28 +156,67 @@ export default function QuizPage() {
       : null
 
   const startTile = (i: number) => {
-    if (unlocks[i]) return
+    if (unlocks[i] || failed[i]) return
     setActiveTile(i)
     setQIdx(0)
+    setCorrectCount(0)
   }
 
-  const answer = (idx: number) => {
+  const answer = (optIdx: number) => {
     if (!currentGroup) return
-    if (qIdx < 2) setQIdx(qIdx + 1)
-    else {
-      const next = unlocks.slice()
-      next[activeTile!] = true
-      saveUnlocks(next)
+    const q = currentGroup.questions[qIdx]
+    const isCorrect = optIdx === q.correct
+
+    // wrong => instant fail, close, no retry this session
+    if (!isCorrect) {
+      const f = failed.slice()
+      f[activeTile!] = true
+      setFailed(f)
+      // close modal
       setActiveTile(null)
       setQIdx(0)
+      setCorrectCount(0)
+      return
+    }
+
+    // correct path
+    const nextCorrect = correctCount + 1
+    if (qIdx < 2) {
+      setCorrectCount(nextCorrect)
+      setQIdx(qIdx + 1)
+    } else {
+      // third correct => unlock tile
+      if (nextCorrect >= 3) {
+        const next = unlocks.slice()
+        next[activeTile!] = true
+        saveUnlocks(next)
+      }
+      setActiveTile(null)
+      setQIdx(0)
+      setCorrectCount(0)
     }
   }
 
   const resetProgress = () => {
     const blank = Array(9).fill(false)
     saveUnlocks(blank)
+    setFailed(Array(9).fill(false))
     setActiveTile(null)
     setQIdx(0)
+    setCorrectCount(0)
+    setTileOrder([...Array(9).keys()])
+  }
+
+  const allUnlocked = unlocks.every(Boolean)
+
+  // DnD handlers (enabled only when allUnlocked)
+  const onDragEnd = (event: DragEndEvent) => {
+    if (!allUnlocked) return
+    const { active, over } = event
+    if (!over || active.id === over.id) return
+    const from = tileOrder.indexOf(Number(active.id))
+    const to = tileOrder.indexOf(Number(over.id))
+    setTileOrder(arrayMove(tileOrder, from, to))
   }
 
   if (loading)
@@ -137,8 +232,6 @@ export default function QuizPage() {
         <p>{error || "quiz-sets.json missing or invalid."}</p>
       </div>
     )
-
-  const allUnlocked = unlocks.every(Boolean)
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-amber-900 via-stone-900 to-black text-white p-4 md:p-8">
@@ -168,22 +261,7 @@ export default function QuizPage() {
           {data!.sets.map((s, i) => (
             <button
               key={i}
-              onClick={() => {
-                setSetIdx(i)
-                if (typeof window !== "undefined") {
-                  try {
-                    const raw = localStorage.getItem(LS_KEY)
-                    const parsed = raw
-                      ? (JSON.parse(raw) as Record<string, boolean[]>)
-                      : {}
-                    setUnlocks(parsed[String(i)] || Array(9).fill(false))
-                  } catch {
-                    setUnlocks(Array(9).fill(false))
-                  }
-                }
-                setActiveTile(null)
-                setQIdx(0)
-              }}
+              onClick={() => setSetIdx(i)}
               className={`px-3 py-2 rounded-lg border transition ${
                 i === setIdx
                   ? "bg-amber-600 border-amber-400"
@@ -209,10 +287,18 @@ export default function QuizPage() {
                 Tile {activeTile + 1} – Question {qIdx + 1}/3
               </div>
               <button
-                onClick={() => setActiveTile(null)}
+                onClick={() => {
+                  // cancel = forfeit attempt on this run
+                  const f = failed.slice()
+                  f[activeTile] = true
+                  setFailed(f)
+                  setActiveTile(null)
+                  setQIdx(0)
+                  setCorrectCount(0)
+                }}
                 className="text-xs px-2 py-1 rounded bg-white/10 hover:bg-white/20 border border-white/20"
               >
-                Cancel
+                Cancel (forfeit)
               </button>
             </div>
             <h3 className="text-lg font-semibold mb-4">
@@ -230,7 +316,8 @@ export default function QuizPage() {
               ))}
             </div>
             <p className="text-xs text-white/50 mt-3">
-              Answer all 3 to unlock this piece.
+              Get all three correct in a row to unlock. One wrong = fail this
+              tile (no retry until reload).
             </p>
           </div>
         )}
@@ -242,54 +329,108 @@ export default function QuizPage() {
               {currentSet.title}
             </h2>
 
-            <div className="grid grid-cols-3 gap-2 sm:gap-3">
-              {Array.from({ length: 9 }).map((_, i) => {
-                const isUnlocked = unlocks[i]
-                const mapped = pieceMap[i]
-                const url = pieceUrl(setIdx, mapped)
-                return (
-                  <button
-                    key={i}
-                    onClick={() => startTile(i)}
-                    disabled={isUnlocked}
-                    className={`relative aspect-square rounded-xl overflow-hidden border ${
-                      isUnlocked
-                        ? "border-emerald-400 ring-2 ring-emerald-400/40"
-                        : "border-white/15 hover:border-white/40 hover:bg-white/5"
-                    }`}
-                  >
-                    <div className="absolute inset-0 bg-black/50">
-                      {isUnlocked ? (
-                        <img
-                          src={url}
-                          alt={`Piece ${mapped + 1}`}
-                          className="w-full h-full object-cover"
-                        />
-                      ) : (
-                        <div className="w-full h-full grid place-items-center">
-                          <span className="text-white/70 text-sm">Locked</span>
-                        </div>
-                      )}
-                    </div>
-                    <div className="absolute top-1 left-1 text-[10px] bg-black/60 px-1.5 py-0.5 rounded">
-                      {i + 1}
-                    </div>
-                    {isUnlocked && (
-                      <a
-                        href={url}
-                        download
-                        onClick={(e) => e.stopPropagation()}
-                        className="absolute bottom-1 right-1 inline-flex items-center gap-1 text-[10px] px-1.5 py-0.5 rounded bg-emerald-600 hover:bg-emerald-700"
+            <DndContext
+              sensors={sensors}
+              collisionDetection={closestCenter}
+              onDragEnd={onDragEnd}
+            >
+              <SortableContext
+                // use ids as the "display order"; ids are tile indices 0..8
+                items={tileOrder.map((i) => String(i))}
+                strategy={verticalListSortingStrategy}
+              >
+                <div className="grid grid-cols-3 gap-2 sm:gap-3">
+                  {tileOrder.map((posIdx) => {
+                    const isUnlocked = unlocks[posIdx]
+                    const isFailed = failed[posIdx]
+                    const mapped = pieceMap[posIdx]
+                    const url = pieceUrl(setIdx, mapped)
+                    const canDrag = isUnlocked && unlocks.every(Boolean) // only when all unlocked
+                    const disabled = !canDrag
+
+                    return (
+                      <SortableTile
+                        key={String(posIdx)}
+                        id={String(posIdx)}
+                        disabled={disabled}
                       >
-                        PNG
-                      </a>
-                    )}
-                  </button>
-                )
-              })}
-            </div>
+                        <button
+                          onClick={() => startTile(posIdx)}
+                          disabled={isUnlocked || isFailed}
+                          className={`relative aspect-square w-full rounded-xl overflow-hidden border ${
+                            isUnlocked
+                              ? "border-emerald-400 ring-2 ring-emerald-400/40 cursor-grab active:cursor-grabbing"
+                              : isFailed
+                              ? "border-red-400 ring-2 ring-red-400/30"
+                              : "border-white/15 hover:border-white/40 hover:bg-white/5"
+                          }`}
+                        >
+                          <div className="absolute inset-0 bg-black/50">
+                            {isUnlocked ? (
+                              <img
+                                src={url}
+                                alt={`Piece ${mapped + 1}`}
+                                className="w-full h-full object-cover"
+                              />
+                            ) : isFailed ? (
+                              <div className="w-full h-full grid place-items-center">
+                                <div className="text-center">
+                                  <div className="text-red-400 font-semibold">
+                                    Failed
+                                  </div>
+                                  <div className="text-white/60 text-xs">
+                                    Reload page to try again
+                                  </div>
+                                </div>
+                              </div>
+                            ) : (
+                              <div className="w-full h-full grid place-items-center">
+                                <div className="text-center">
+                                  <span className="text-white/80 text-sm block">
+                                    Locked
+                                  </span>
+                                  <span className="text-white/60 text-[11px] block mt-0.5">
+                                    Click to start quiz and unlock this
+                                  </span>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+
+                          <div className="absolute top-1 left-1 text-[10px] bg-black/60 px-1.5 py-0.5 rounded">
+                            {posIdx + 1}
+                          </div>
+
+                          {isUnlocked && (
+                            <a
+                              href={url}
+                              download
+                              onClick={(e) => e.stopPropagation()}
+                              className="absolute bottom-1 right-1 inline-flex items-center gap-1 text-[10px] px-1.5 py-0.5 rounded bg-emerald-600 hover:bg-emerald-700"
+                            >
+                              PNG
+                            </a>
+                          )}
+                        </button>
+                      </SortableTile>
+                    )
+                  })}
+                </div>
+              </SortableContext>
+            </DndContext>
+
+            {unlocks.every(Boolean) ? (
+              <p className="mt-3 text-emerald-400 text-sm">
+                All unlocked! Drag pieces to rearrange like a puzzle.
+              </p>
+            ) : (
+              <p className="mt-3 text-white/60 text-xs">
+                Unlock all 9 to enable drag & drop rearranging.
+              </p>
+            )}
           </div>
 
+          {/* Progress */}
           <aside className="bg-white/5 border border-white/10 rounded-2xl p-5">
             <h3 className="text-lg font-semibold mb-3">Progress</h3>
             <div className="text-sm opacity-80 mb-2">
@@ -303,9 +444,9 @@ export default function QuizPage() {
                 }}
               />
             </div>
-            {allUnlocked && (
+            {unlocks.every(Boolean) && (
               <div className="mt-3 text-emerald-400 text-sm">
-                🎉 All 9 unlocked! Download them and assemble the image.
+                🎉 All 9 unlocked! Rearrange tiles to assemble the full image.
               </div>
             )}
           </aside>

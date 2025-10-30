@@ -7,19 +7,34 @@
           "group": 1,
           "questions": [
             {
-              "q": "What comes next in the sequence?",
-              "a": ["A", "B", "C", "D"],
+              "q": "Analogy: LOCK : KEY :: DOOR : __",
+              "a": [
+                "WEB",
+                "MAP",
+                "HANDLE",
+                "SHOE"
+              ],
+              "correct": 2
+            },
+            {
+              "q": "Using A=1, B=2, ..., Z=26, find the sum of 'QUEST'.",
+              "a": [
+                "84",
+                "81",
+                "83",
+                "82"
+              ],
               "correct": 3
             },
             {
-              "q": "Complete the pattern logically.",
-              "a": ["2,4,8,16", "3,6,9,12", "1,2,4,8", "5,10,15,25"],
-              "correct": 2
-            },
-            {
-              "q": "Complete the pattern logically.",
-              "a": ["2,4,8,16", "3,6,9,12", "1,2,4,8", "5,10,15,25"],
-              "correct": 2
+              "q": "Find the next letter: G, H, J, M, __",
+              "a": [
+                "R",
+                "Q",
+                "S",
+                "P"
+              ],
+              "correct": 1
             }
           ]
         },
@@ -27,18 +42,33 @@
           "group": 2,
           "questions": [
             {
-              "q": "What comes next in the sequence?",
-              "a": ["A", "B", "C", "D"],
-              "correct": 0
+              "q": "Facing North, turn right 1 time(s). Which direction now?",
+              "a": [
+                "North",
+                "East",
+                "South",
+                "West"
+              ],
+              "correct": 1
             },
             {
-              "q": "Which of the following is the odd one out?",
-              "a": ["Dog", "Cat", "Cow", "Car"],
-              "correct": 3
+              "q": "Find the next number in the sequence: 3, 10, 17, 24, __",
+              "a": [
+                "29",
+                "31",
+                "33",
+                "24"
+              ],
+              "correct": 1
             },
             {
-              "q": "Which of the following is the odd one out?",
-              "a": ["Dog", "Cat", "Cow", "Car"],
+              "q": "Using A=1, B=2, ..., Z=26, find the sum of 'BRAIN'.",
+              "a": [
+                "45",
+                "43",
+                "46",
+                "44"
+              ],
               "correct": 3
             }
           ]
@@ -47,19 +77,34 @@
           "group": 3,
           "questions": [
             {
-              "q": "What comes next in the sequence?",
-              "a": ["A", "B", "C", "D"],
-              "correct": 1
-            },
-            {
-              "q": "Which of the following is the odd one out?",
-              "a": ["Dog", "Cat", "Cow", "Car"],
+              "q": "Using A=1, B=2, ..., Z=26, find the sum of 'BRAIN'.",
+              "a": [
+                "43",
+                "46",
+                "45",
+                "44"
+              ],
               "correct": 3
             },
             {
-              "q": "Complete the pattern logically.",
-              "a": ["2,4,8,16", "3,6,9,12", "1,2,4,8", "5,10,15,25"],
+              "q": "Using A=1, B=2, ..., Z=26, find the sum of 'LOGIC'.",
+              "a": [
+                "45",
+                "47",
+                "46",
+                "48"
+              ],
               "correct": 2
+            },
+            {
+              "q": "Find the next number in the sequence: 8, 15, 22, 29, __",
+              "a": [
+                "38",
+                "36",
+                "43",
+                "29"
+              ],
+              "correct": 1
             }
           ]
         },
@@ -67,19 +112,34 @@
           "group": 4,
           "questions": [
             {
-              "q": "What comes next in the sequence?",
-              "a": ["A", "B", "C", "D"],
-              "correct": 0
-            },
-            {
-              "q": "Complete the pattern logically.",
-              "a": ["2,4,8,16", "3,6,9,12", "1,2,4,8", "5,10,15,25"],
+              "q": "Find the next letter: A, B, D, G, __",
+              "a": [
+                "J",
+                "M",
+                "K",
+                "L"
+              ],
               "correct": 2
             },
             {
-              "q": "What comes next in the sequence?",
-              "a": ["A", "B", "C", "D"],
-              "correct": 3
+              "q": "Find the next letter: I, J, L, O, __",
+              "a": [
+                "R",
+                "S",
+                "U",
+                "T"
+              ],
+              "correct": 1
+            },
+            {
+              "q": "Premises: (1) All cars are creatures. (2) Some creatures are machines. What follows?",
+              "a": [
+                "Some creatures may not be machines",
+                "All cars are machines",
+                "Some cars are machines (must be true)",
+                "No cars are machines"
+              ],
+              "correct": 0
             }
           ]
         },
@@ -87,19 +147,34 @@
           "group": 5,
           "questions": [
             {
-              "q": "Complete the pattern logically.",
-              "a": ["2,4,8,16", "3,6,9,12", "1,2,4,8", "5,10,15,25"],
-              "correct": 2
-            },
-            {
-              "q": "What comes next in the sequence?",
-              "a": ["A", "B", "C", "D"],
+              "q": "Complete the geometric sequence: 5, 15, 45, 135, __",
+              "a": [
+                "405",
+                "135",
+                "408",
+                "411"
+              ],
               "correct": 0
             },
             {
-              "q": "What comes next in the sequence?",
-              "a": ["A", "B", "C", "D"],
-              "correct": 2
+              "q": "Analogy: HAND : GLOVE :: FOOT : __",
+              "a": [
+                "RING",
+                "MAP",
+                "SCREWDRIVER",
+                "SOCK"
+              ],
+              "correct": 3
+            },
+            {
+              "q": "Mapping rule: n\u00b2 + 1. What does 8 map to?",
+              "a": [
+                "63",
+                "67",
+                "64",
+                "65"
+              ],
+              "correct": 3
             }
           ]
         },
@@ -107,18 +182,33 @@
           "group": 6,
           "questions": [
             {
-              "q": "Which of the following is the odd one out?",
-              "a": ["Dog", "Cat", "Cow", "Car"],
-              "correct": 3
+              "q": "Premises: (1) All books are flowers. (2) Some flowers are machines. What follows?",
+              "a": [
+                "Some flowers may not be machines",
+                "All books are machines",
+                "Some books are machines (must be true)",
+                "No books are machines"
+              ],
+              "correct": 0
             },
             {
-              "q": "Complete the pattern logically.",
-              "a": ["2,4,8,16", "3,6,9,12", "1,2,4,8", "5,10,15,25"],
+              "q": "Analogy: KING : CROWN :: JUDGE : __",
+              "a": [
+                "SHOE",
+                "CHAIN",
+                "GAVEL",
+                "STICK"
+              ],
               "correct": 2
             },
             {
-              "q": "What comes next in the sequence?",
-              "a": ["A", "B", "C", "D"],
+              "q": "Mapping rule: n\u00b2 + 1. What does 12 map to?",
+              "a": [
+                "145",
+                "144",
+                "147",
+                "143"
+              ],
               "correct": 0
             }
           ]
@@ -127,19 +217,34 @@
           "group": 7,
           "questions": [
             {
-              "q": "Complete the pattern logically.",
-              "a": ["2,4,8,16", "3,6,9,12", "1,2,4,8", "5,10,15,25"],
-              "correct": 2
-            },
-            {
-              "q": "What comes next in the sequence?",
-              "a": ["A", "B", "C", "D"],
+              "q": "Use Caesar cipher with shift +3 (e.g., FLOWER \u2192 IORZHU). Encode 'STONE'.",
+              "a": [
+                "XYTSJ",
+                "VWRQH",
+                "UVQPG",
+                "WXSRI"
+              ],
               "correct": 1
             },
             {
-              "q": "Which of the following is the odd one out?",
-              "a": ["Dog", "Cat", "Cow", "Car"],
-              "correct": 3
+              "q": "Complete the geometric sequence: 4, 8, 16, 32, __",
+              "a": [
+                "64",
+                "128",
+                "32",
+                "68"
+              ],
+              "correct": 0
+            },
+            {
+              "q": "Two doors: treasure and trap; one guard lies, one tells truth. One question to one guard \u2014 what do you ask?",
+              "a": [
+                "Ask: Which door would the other guard say is treasure? Choose the opposite.",
+                "Ask: Are you the liar? If yes, choose his door.",
+                "Ask both to open their doors and watch.",
+                "Pick randomly to save time."
+              ],
+              "correct": 0
             }
           ]
         },
@@ -147,19 +252,34 @@
           "group": 8,
           "questions": [
             {
-              "q": "Complete the pattern logically.",
-              "a": ["2,4,8,16", "3,6,9,12", "1,2,4,8", "5,10,15,25"],
-              "correct": 2
+              "q": "Two doors: treasure and trap; one guard lies, one tells truth. One question to one guard \u2014 what do you ask?",
+              "a": [
+                "Ask: Which door would the other guard say is treasure? Choose the opposite.",
+                "Ask: Are you the liar? If yes, choose his door.",
+                "Ask both to open their doors and watch.",
+                "Pick randomly to save time."
+              ],
+              "correct": 0
             },
             {
-              "q": "What comes next in the sequence?",
-              "a": ["A", "B", "C", "D"],
-              "correct": 2
+              "q": "Complete the geometric sequence: 5, 10, 20, 40, __",
+              "a": [
+                "80",
+                "40",
+                "160",
+                "84"
+              ],
+              "correct": 0
             },
             {
-              "q": "Complete the pattern logically.",
-              "a": ["2,4,8,16", "3,6,9,12", "1,2,4,8", "5,10,15,25"],
-              "correct": 2
+              "q": "I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?",
+              "a": [
+                "Echo",
+                "Song",
+                "Whistle",
+                "Leaf"
+              ],
+              "correct": 0
             }
           ]
         },
@@ -167,19 +287,34 @@
           "group": 9,
           "questions": [
             {
-              "q": "What comes next in the sequence?",
-              "a": ["A", "B", "C", "D"],
-              "correct": 3
+              "q": "Use Caesar cipher with shift +2 (e.g., FLOWER \u2192 HNQYGT). Encode 'LIGHT'.",
+              "a": [
+                "NKIJV",
+                "OLJKW",
+                "MJHIU",
+                "PMKLX"
+              ],
+              "correct": 0
             },
             {
-              "q": "Which of the following is the odd one out?",
-              "a": ["Dog", "Cat", "Cow", "Car"],
-              "correct": 3
+              "q": "Use Caesar cipher with shift +3 (e.g., FLOWER \u2192 IORZHU). Encode 'LIGHT'.",
+              "a": [
+                "QNLMY",
+                "OLJKW",
+                "PMKLX",
+                "NKIJV"
+              ],
+              "correct": 1
             },
             {
-              "q": "Complete the pattern logically.",
-              "a": ["2,4,8,16", "3,6,9,12", "1,2,4,8", "5,10,15,25"],
-              "correct": 2
+              "q": "What gets wetter the more it dries?",
+              "a": [
+                "Towel",
+                "Rain",
+                "Sponge",
+                "Cloud"
+              ],
+              "correct": 0
             }
           ]
         }
@@ -192,19 +327,34 @@
           "group": 1,
           "questions": [
             {
-              "q": "A train leaves at 4PM and arrives at 6PM traveling 120 km. What is its average speed?",
-              "a": ["40 km/h", "50 km/h", "60 km/h", "70 km/h"],
-              "correct": 2
-            },
-            {
-              "q": "Find the next number: 3, 6, 9, 12, __",
-              "a": ["13", "14", "15", "16"],
-              "correct": 2
-            },
-            {
-              "q": "If TABLE is coded as UCDNG, how is CHAIR coded?",
-              "a": ["EDCKT", "DFCKS", "EJCKN", "EJDMT"],
+              "q": "Find the odd one out:",
+              "a": [
+                "Sand",
+                "Silver",
+                "Iron",
+                "Copper"
+              ],
               "correct": 0
+            },
+            {
+              "q": "Analogy: LOCK : KEY :: DOOR : __",
+              "a": [
+                "CHAIN",
+                "DOORKNOB",
+                "WEB",
+                "HANDLE"
+              ],
+              "correct": 3
+            },
+            {
+              "q": "Facing North, turn right 1 time(s). Which direction now?",
+              "a": [
+                "North",
+                "East",
+                "South",
+                "West"
+              ],
+              "correct": 1
             }
           ]
         },
@@ -212,19 +362,34 @@
           "group": 2,
           "questions": [
             {
-              "q": "Find the next number: 3, 6, 9, 12, __",
-              "a": ["13", "14", "15", "16"],
+              "q": "Using A=1, B=2, ..., Z=26, find the sum of 'LOGIC'.",
+              "a": [
+                "46",
+                "48",
+                "47",
+                "45"
+              ],
+              "correct": 0
+            },
+            {
+              "q": "Facing North, turn right 2 time(s). Which direction now?",
+              "a": [
+                "North",
+                "East",
+                "South",
+                "West"
+              ],
               "correct": 2
             },
             {
-              "q": "If TABLE is coded as UCDNG, how is CHAIR coded?",
-              "a": ["EDCKT", "DFCKS", "EJCKN", "EJDMT"],
-              "correct": 0
-            },
-            {
-              "q": "If TABLE is coded as UCDNG, how is CHAIR coded?",
-              "a": ["EDCKT", "DFCKS", "EJCKN", "EJDMT"],
-              "correct": 0
+              "q": "Using A=1, B=2, ..., Z=26, find the sum of 'LOGIC'.",
+              "a": [
+                "47",
+                "48",
+                "45",
+                "46"
+              ],
+              "correct": 3
             }
           ]
         },
@@ -232,19 +397,34 @@
           "group": 3,
           "questions": [
             {
-              "q": "Find the next number: 3, 6, 9, 12, __",
-              "a": ["13", "14", "15", "16"],
+              "q": "Facing North, turn right 3 time(s). Which direction now?",
+              "a": [
+                "North",
+                "East",
+                "South",
+                "West"
+              ],
+              "correct": 3
+            },
+            {
+              "q": "Find the next number in the sequence: 8, 11, 14, 17, __",
+              "a": [
+                "18",
+                "17",
+                "20",
+                "22"
+              ],
               "correct": 2
             },
             {
-              "q": "Find the next number: 3, 6, 9, 12, __",
-              "a": ["13", "14", "15", "16"],
-              "correct": 2
-            },
-            {
-              "q": "Find the next number: 3, 6, 9, 12, __",
-              "a": ["13", "14", "15", "16"],
-              "correct": 2
+              "q": "Find the next number in the sequence: 13, 18, 23, 28, __",
+              "a": [
+                "33",
+                "31",
+                "28",
+                "38"
+              ],
+              "correct": 0
             }
           ]
         },
@@ -252,19 +432,34 @@
           "group": 4,
           "questions": [
             {
-              "q": "Find the next number: 3, 6, 9, 12, __",
-              "a": ["13", "14", "15", "16"],
-              "correct": 2
+              "q": "Premises: (1) All cats are animals. (2) Some animals are notebooks. What follows?",
+              "a": [
+                "Some animals may not be notebooks",
+                "All cats are notebooks",
+                "Some cats are notebooks (must be true)",
+                "No cats are notebooks"
+              ],
+              "correct": 0
             },
             {
-              "q": "Find the next number: 3, 6, 9, 12, __",
-              "a": ["13", "14", "15", "16"],
-              "correct": 2
+              "q": "Premises: (1) All cars are animals. (2) Some animals are notebooks. What follows?",
+              "a": [
+                "Some animals may not be notebooks",
+                "All cars are notebooks",
+                "Some cars are notebooks (must be true)",
+                "No cars are notebooks"
+              ],
+              "correct": 0
             },
             {
-              "q": "A train leaves at 4PM and arrives at 6PM traveling 120 km. What is its average speed?",
-              "a": ["40 km/h", "50 km/h", "60 km/h", "70 km/h"],
-              "correct": 2
+              "q": "Use Caesar cipher with shift +3 (e.g., FLOWER \u2192 IORZHU). Encode 'BRAIN'.",
+              "a": [
+                "GWFNS",
+                "DTCKP",
+                "FVEMR",
+                "EUDLQ"
+              ],
+              "correct": 3
             }
           ]
         },
@@ -272,19 +467,34 @@
           "group": 5,
           "questions": [
             {
-              "q": "If TABLE is coded as UCDNG, how is CHAIR coded?",
-              "a": ["EDCKT", "DFCKS", "EJCKN", "EJDMT"],
-              "correct": 0
+              "q": "Use Caesar cipher with shift +1 (e.g., FLOWER \u2192 GMPXFS). Encode 'STONE'.",
+              "a": [
+                "STONE",
+                "UVQPG",
+                "VWRQH",
+                "TUPOF"
+              ],
+              "correct": 3
             },
             {
-              "q": "If TABLE is coded as UCDNG, how is CHAIR coded?",
-              "a": ["EDCKT", "DFCKS", "EJCKN", "EJDMT"],
-              "correct": 0
-            },
-            {
-              "q": "A train leaves at 4PM and arrives at 6PM traveling 120 km. What is its average speed?",
-              "a": ["40 km/h", "50 km/h", "60 km/h", "70 km/h"],
+              "q": "Find the next letter: J, K, M, P, __",
+              "a": [
+                "U",
+                "S",
+                "T",
+                "V"
+              ],
               "correct": 2
+            },
+            {
+              "q": "Use Caesar cipher with shift +2 (e.g., FLOWER \u2192 HNQYGT). Encode 'GAMES'.",
+              "a": [
+                "JDPHV",
+                "ICOGU",
+                "KEQIW",
+                "HBNFT"
+              ],
+              "correct": 1
             }
           ]
         },
@@ -292,18 +502,33 @@
           "group": 6,
           "questions": [
             {
-              "q": "Find the next number: 3, 6, 9, 12, __",
-              "a": ["13", "14", "15", "16"],
-              "correct": 2
+              "q": "Complete the geometric sequence: 1, 2, 4, 8, __",
+              "a": [
+                "16",
+                "8",
+                "18",
+                "32"
+              ],
+              "correct": 0
             },
             {
-              "q": "A train leaves at 4PM and arrives at 6PM traveling 120 km. What is its average speed?",
-              "a": ["40 km/h", "50 km/h", "60 km/h", "70 km/h"],
-              "correct": 2
+              "q": "Find the next letter: G, H, J, M, __",
+              "a": [
+                "R",
+                "P",
+                "S",
+                "Q"
+              ],
+              "correct": 3
             },
             {
-              "q": "If TABLE is coded as UCDNG, how is CHAIR coded?",
-              "a": ["EDCKT", "DFCKS", "EJCKN", "EJDMT"],
+              "q": "Complete the geometric sequence: 5, 10, 20, 40, __",
+              "a": [
+                "80",
+                "40",
+                "160",
+                "84"
+              ],
               "correct": 0
             }
           ]
@@ -312,19 +537,34 @@
           "group": 7,
           "questions": [
             {
-              "q": "If TABLE is coded as UCDNG, how is CHAIR coded?",
-              "a": ["EDCKT", "DFCKS", "EJCKN", "EJDMT"],
+              "q": "Use Caesar cipher with shift +2 (e.g., FLOWER \u2192 HNQYGT). Encode 'APPLE'.",
+              "a": [
+                "CRRNG",
+                "ETTPI",
+                "BQQMF",
+                "DSSOH"
+              ],
               "correct": 0
             },
             {
-              "q": "Find the next number: 3, 6, 9, 12, __",
-              "a": ["13", "14", "15", "16"],
-              "correct": 2
+              "q": "Two doors: treasure and trap; one guard lies, one tells truth. One question to one guard \u2014 what do you ask?",
+              "a": [
+                "Ask: Which door would the other guard say is treasure? Choose the opposite.",
+                "Ask: Are you the liar? If yes, choose his door.",
+                "Ask both to open their doors and watch.",
+                "Pick randomly to save time."
+              ],
+              "correct": 0
             },
             {
-              "q": "A train leaves at 4PM and arrives at 6PM traveling 120 km. What is its average speed?",
-              "a": ["40 km/h", "50 km/h", "60 km/h", "70 km/h"],
-              "correct": 2
+              "q": "Mapping rule: n\u00b2 + 1. What does 8 map to?",
+              "a": [
+                "64",
+                "63",
+                "67",
+                "65"
+              ],
+              "correct": 3
             }
           ]
         },
@@ -332,18 +572,33 @@
           "group": 8,
           "questions": [
             {
-              "q": "If TABLE is coded as UCDNG, how is CHAIR coded?",
-              "a": ["EDCKT", "DFCKS", "EJCKN", "EJDMT"],
+              "q": "Two doors: treasure and trap; one guard lies, one tells truth. One question to one guard \u2014 what do you ask?",
+              "a": [
+                "Ask: Which door would the other guard say is treasure? Choose the opposite.",
+                "Ask: Are you the liar? If yes, choose his door.",
+                "Ask both to open their doors and watch.",
+                "Pick randomly to save time."
+              ],
               "correct": 0
             },
             {
-              "q": "A train leaves at 4PM and arrives at 6PM traveling 120 km. What is its average speed?",
-              "a": ["40 km/h", "50 km/h", "60 km/h", "70 km/h"],
-              "correct": 2
+              "q": "Premises: (1) All cars are creatures. (2) Some creatures are machines. What follows?",
+              "a": [
+                "Some creatures may not be machines",
+                "All cars are machines",
+                "Some cars are machines (must be true)",
+                "No cars are machines"
+              ],
+              "correct": 0
             },
             {
-              "q": "If TABLE is coded as UCDNG, how is CHAIR coded?",
-              "a": ["EDCKT", "DFCKS", "EJCKN", "EJDMT"],
+              "q": "I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?",
+              "a": [
+                "Echo",
+                "Song",
+                "Whistle",
+                "Leaf"
+              ],
               "correct": 0
             }
           ]
@@ -352,19 +607,34 @@
           "group": 9,
           "questions": [
             {
-              "q": "A train leaves at 4PM and arrives at 6PM traveling 120 km. What is its average speed?",
-              "a": ["40 km/h", "50 km/h", "60 km/h", "70 km/h"],
+              "q": "Use Caesar cipher with shift +2 (e.g., FLOWER \u2192 HNQYGT). Encode 'APPLE'.",
+              "a": [
+                "ETTPI",
+                "DSSOH",
+                "CRRNG",
+                "BQQMF"
+              ],
               "correct": 2
             },
             {
-              "q": "Find the next number: 3, 6, 9, 12, __",
-              "a": ["13", "14", "15", "16"],
-              "correct": 2
+              "q": "You see me once in a minute, twice in a moment, but never in a thousand years. What am I?",
+              "a": [
+                "The letter M",
+                "A shadow",
+                "Silence",
+                "Time"
+              ],
+              "correct": 0
             },
             {
-              "q": "A train leaves at 4PM and arrives at 6PM traveling 120 km. What is its average speed?",
-              "a": ["40 km/h", "50 km/h", "60 km/h", "70 km/h"],
-              "correct": 2
+              "q": "Two doors: treasure and trap; one guard lies, one tells truth. One question to one guard \u2014 what do you ask?",
+              "a": [
+                "Ask: Which door would the other guard say is treasure? Choose the opposite.",
+                "Ask: Are you the liar? If yes, choose his door.",
+                "Ask both to open their doors and watch.",
+                "Pick randomly to save time."
+              ],
+              "correct": 0
             }
           ]
         }
@@ -377,29 +647,34 @@
           "group": 1,
           "questions": [
             {
-              "q": "John is older than Mike but younger than Sara. Who is youngest?",
-              "a": ["John", "Mike", "Sara", "None"],
-              "correct": 1
+              "q": "Analogy: LOCK : KEY :: DOOR : __",
+              "a": [
+                "HANDLE",
+                "STICK",
+                "RING",
+                "DOORKNOB"
+              ],
+              "correct": 0
             },
             {
-              "q": "If all squares are rectangles and all rectangles are shapes, what can we say?",
+              "q": "Find the odd one out:",
               "a": [
-                "All shapes are squares",
-                "All squares are shapes",
-                "All rectangles are squares",
-                "Some shapes are circles"
+                "Sand",
+                "Iron",
+                "Copper",
+                "Silver"
               ],
-              "correct": 1
+              "correct": 0
             },
             {
-              "q": "If all squares are rectangles and all rectangles are shapes, what can we say?",
+              "q": "Facing South, turn left 3 time(s). Which direction now?",
               "a": [
-                "All shapes are squares",
-                "All squares are shapes",
-                "All rectangles are squares",
-                "Some shapes are circles"
+                "North",
+                "East",
+                "South",
+                "West"
               ],
-              "correct": 1
+              "correct": 3
             }
           ]
         },
@@ -407,19 +682,33 @@
           "group": 2,
           "questions": [
             {
-              "q": "Choose the image that completes the pattern.",
-              "a": ["Triangle", "Circle", "Square", "Pentagon"],
-              "correct": 2
+              "q": "Facing South, turn right 2 time(s). Which direction now?",
+              "a": [
+                "North",
+                "East",
+                "South",
+                "West"
+              ],
+              "correct": 0
             },
             {
-              "q": "John is older than Mike but younger than Sara. Who is youngest?",
-              "a": ["John", "Mike", "Sara", "None"],
+              "q": "Find the next number in the sequence: 2, 4, 6, 8, __",
+              "a": [
+                "10",
+                "8",
+                "12"
+              ],
+              "correct": 0
+            },
+            {
+              "q": "Find the odd one out:",
+              "a": [
+                "Lotus",
+                "Mango",
+                "Lily",
+                "Rose"
+              ],
               "correct": 1
-            },
-            {
-              "q": "Choose the image that completes the pattern.",
-              "a": ["Triangle", "Circle", "Square", "Pentagon"],
-              "correct": 2
             }
           ]
         },
@@ -427,23 +716,33 @@
           "group": 3,
           "questions": [
             {
-              "q": "If all squares are rectangles and all rectangles are shapes, what can we say?",
+              "q": "Using A=1, B=2, ..., Z=26, find the sum of 'BRAIN'.",
               "a": [
-                "All shapes are squares",
-                "All squares are shapes",
-                "All rectangles are squares",
-                "Some shapes are circles"
+                "44",
+                "43",
+                "45",
+                "46"
               ],
-              "correct": 1
+              "correct": 0
             },
             {
-              "q": "Choose the image that completes the pattern.",
-              "a": ["Triangle", "Circle", "Square", "Pentagon"],
-              "correct": 2
+              "q": "Find the odd one out:",
+              "a": [
+                "Iron",
+                "Copper",
+                "Silver",
+                "Sand"
+              ],
+              "correct": 3
             },
             {
-              "q": "Choose the image that completes the pattern.",
-              "a": ["Triangle", "Circle", "Square", "Pentagon"],
+              "q": "Find the odd one out:",
+              "a": [
+                "Rose",
+                "Lotus",
+                "Mango",
+                "Lily"
+              ],
               "correct": 2
             }
           ]
@@ -452,24 +751,34 @@
           "group": 4,
           "questions": [
             {
-              "q": "If all squares are rectangles and all rectangles are shapes, what can we say?",
+              "q": "Complete the geometric sequence: 2, 4, 8, 16, __",
               "a": [
-                "All shapes are squares",
-                "All squares are shapes",
-                "All rectangles are squares",
-                "Some shapes are circles"
+                "16",
+                "64",
+                "34",
+                "32"
               ],
-              "correct": 1
+              "correct": 3
             },
             {
-              "q": "John is older than Mike but younger than Sara. Who is youngest?",
-              "a": ["John", "Mike", "Sara", "None"],
-              "correct": 1
+              "q": "Use Caesar cipher with shift +1 (e.g., FLOWER \u2192 GMPXFS). Encode 'WORLD'.",
+              "a": [
+                "XPSME",
+                "YQTNF",
+                "ZRUOG",
+                "WORLD"
+              ],
+              "correct": 0
             },
             {
-              "q": "Choose the image that completes the pattern.",
-              "a": ["Triangle", "Circle", "Square", "Pentagon"],
-              "correct": 2
+              "q": "Analogy: HAND : GLOVE :: FOOT : __",
+              "a": [
+                "SOCK",
+                "STICK",
+                "WEB",
+                "SHOE"
+              ],
+              "correct": 0
             }
           ]
         },
@@ -477,24 +786,34 @@
           "group": 5,
           "questions": [
             {
-              "q": "If all squares are rectangles and all rectangles are shapes, what can we say?",
+              "q": "Use Caesar cipher with shift +1 (e.g., FLOWER \u2192 GMPXFS). Encode 'BRAIN'.",
               "a": [
-                "All shapes are squares",
-                "All squares are shapes",
-                "All rectangles are squares",
-                "Some shapes are circles"
+                "EUDLQ",
+                "CSBJO",
+                "DTCKP",
+                "BRAIN"
               ],
               "correct": 1
             },
             {
-              "q": "Choose the image that completes the pattern.",
-              "a": ["Triangle", "Circle", "Square", "Pentagon"],
-              "correct": 2
+              "q": "Use Caesar cipher with shift +3 (e.g., FLOWER \u2192 IORZHU). Encode 'APPLE'.",
+              "a": [
+                "FUUQJ",
+                "CRRNG",
+                "ETTPI",
+                "DSSOH"
+              ],
+              "correct": 3
             },
             {
-              "q": "John is older than Mike but younger than Sara. Who is youngest?",
-              "a": ["John", "Mike", "Sara", "None"],
-              "correct": 1
+              "q": "Analogy: HAND : GLOVE :: FOOT : __",
+              "a": [
+                "SHOE",
+                "DOORKNOB",
+                "PAPER",
+                "SOCK"
+              ],
+              "correct": 3
             }
           ]
         },
@@ -502,19 +821,34 @@
           "group": 6,
           "questions": [
             {
-              "q": "John is older than Mike but younger than Sara. Who is youngest?",
-              "a": ["John", "Mike", "Sara", "None"],
-              "correct": 1
+              "q": "Premises: (1) All cats are paper. (2) Some paper are instruments. What follows?",
+              "a": [
+                "Some paper may not be instruments",
+                "All cats are instruments",
+                "Some cats are instruments (must be true)",
+                "No cats are instruments"
+              ],
+              "correct": 0
             },
             {
-              "q": "John is older than Mike but younger than Sara. Who is youngest?",
-              "a": ["John", "Mike", "Sara", "None"],
-              "correct": 1
+              "q": "Premises: (1) All roses are paper. (2) Some paper are notebooks. What follows?",
+              "a": [
+                "Some paper may not be notebooks",
+                "All roses are notebooks",
+                "Some roses are notebooks (must be true)",
+                "No roses are notebooks"
+              ],
+              "correct": 0
             },
             {
-              "q": "Choose the image that completes the pattern.",
-              "a": ["Triangle", "Circle", "Square", "Pentagon"],
-              "correct": 2
+              "q": "Analogy: LOCK : KEY :: DOOR : __",
+              "a": [
+                "WEB",
+                "DOORKNOB",
+                "CHAIN",
+                "HANDLE"
+              ],
+              "correct": 3
             }
           ]
         },
@@ -522,24 +856,34 @@
           "group": 7,
           "questions": [
             {
-              "q": "If all squares are rectangles and all rectangles are shapes, what can we say?",
+              "q": "Complete the geometric sequence: 3, 6, 12, 24, __",
               "a": [
-                "All shapes are squares",
-                "All squares are shapes",
-                "All rectangles are squares",
-                "Some shapes are circles"
+                "96",
+                "50",
+                "48",
+                "24"
               ],
-              "correct": 1
-            },
-            {
-              "q": "Choose the image that completes the pattern.",
-              "a": ["Triangle", "Circle", "Square", "Pentagon"],
               "correct": 2
             },
             {
-              "q": "John is older than Mike but younger than Sara. Who is youngest?",
-              "a": ["John", "Mike", "Sara", "None"],
-              "correct": 1
+              "q": "I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?",
+              "a": [
+                "Echo",
+                "Song",
+                "Whistle",
+                "Leaf"
+              ],
+              "correct": 0
+            },
+            {
+              "q": "What gets wetter the more it dries?",
+              "a": [
+                "Towel",
+                "Rain",
+                "Sponge",
+                "Cloud"
+              ],
+              "correct": 0
             }
           ]
         },
@@ -547,24 +891,34 @@
           "group": 8,
           "questions": [
             {
-              "q": "Choose the image that completes the pattern.",
-              "a": ["Triangle", "Circle", "Square", "Pentagon"],
-              "correct": 2
-            },
-            {
-              "q": "Choose the image that completes the pattern.",
-              "a": ["Triangle", "Circle", "Square", "Pentagon"],
-              "correct": 2
-            },
-            {
-              "q": "If all squares are rectangles and all rectangles are shapes, what can we say?",
+              "q": "Complete the geometric sequence: 3, 6, 12, 24, __",
               "a": [
-                "All shapes are squares",
-                "All squares are shapes",
-                "All rectangles are squares",
-                "Some shapes are circles"
+                "96",
+                "48",
+                "24",
+                "50"
               ],
               "correct": 1
+            },
+            {
+              "q": "You see me once in a minute, twice in a moment, but never in a thousand years. What am I?",
+              "a": [
+                "The letter M",
+                "A shadow",
+                "Silence",
+                "Time"
+              ],
+              "correct": 0
+            },
+            {
+              "q": "Complete the geometric sequence: 2, 6, 18, 54, __",
+              "a": [
+                "486",
+                "54",
+                "162",
+                "165"
+              ],
+              "correct": 2
             }
           ]
         },
@@ -572,18 +926,33 @@
           "group": 9,
           "questions": [
             {
-              "q": "Choose the image that completes the pattern.",
-              "a": ["Triangle", "Circle", "Square", "Pentagon"],
-              "correct": 2
+              "q": "Mapping rule: n\u00b2 + 1. What does 12 map to?",
+              "a": [
+                "145",
+                "144",
+                "147",
+                "143"
+              ],
+              "correct": 0
             },
             {
-              "q": "Choose the image that completes the pattern.",
-              "a": ["Triangle", "Circle", "Square", "Pentagon"],
-              "correct": 2
+              "q": "Mapping rule: n\u00b2 + 1. What does 12 map to?",
+              "a": [
+                "145",
+                "147",
+                "143",
+                "144"
+              ],
+              "correct": 0
             },
             {
-              "q": "Choose the image that completes the pattern.",
-              "a": ["Triangle", "Circle", "Square", "Pentagon"],
+              "q": "Mapping rule: n\u00b2 + 1. What does 9 map to?",
+              "a": [
+                "81",
+                "84",
+                "82",
+                "80"
+              ],
               "correct": 2
             }
           ]
@@ -597,19 +966,34 @@
           "group": 1,
           "questions": [
             {
-              "q": "Which of the following words can be made from the letters in 'REACT'?",
-              "a": ["TRACE", "RACE", "TEAR", "CARE"],
+              "q": "Facing East, turn left 1 time(s). Which direction now?",
+              "a": [
+                "North",
+                "East",
+                "South",
+                "West"
+              ],
+              "correct": 0
+            },
+            {
+              "q": "Using A=1, B=2, ..., Z=26, find the sum of 'BRAIN'.",
+              "a": [
+                "44",
+                "43",
+                "46",
+                "45"
+              ],
+              "correct": 0
+            },
+            {
+              "q": "Find the odd one out:",
+              "a": [
+                "Rectangle",
+                "Circle",
+                "Triangle",
+                "Square"
+              ],
               "correct": 1
-            },
-            {
-              "q": "Find the correct mirror image of the word 'IQ'.",
-              "a": ["Q\u1d62", "\ua4d8I", "I\u051a", "\u1d09q"],
-              "correct": 2
-            },
-            {
-              "q": "Find the correct mirror image of the word 'IQ'.",
-              "a": ["Q\u1d62", "\ua4d8I", "I\u051a", "\u1d09q"],
-              "correct": 2
             }
           ]
         },
@@ -617,19 +1001,34 @@
           "group": 2,
           "questions": [
             {
-              "q": "Which of the following words can be made from the letters in 'REACT'?",
-              "a": ["TRACE", "RACE", "TEAR", "CARE"],
+              "q": "Using A=1, B=2, ..., Z=26, find the sum of 'QUEST'.",
+              "a": [
+                "84",
+                "82",
+                "83",
+                "81"
+              ],
               "correct": 1
             },
             {
-              "q": "Which of the following words can be made from the letters in 'REACT'?",
-              "a": ["TRACE", "RACE", "TEAR", "CARE"],
-              "correct": 1
+              "q": "Using A=1, B=2, ..., Z=26, find the sum of 'LOGIC'.",
+              "a": [
+                "46",
+                "48",
+                "45",
+                "47"
+              ],
+              "correct": 0
             },
             {
-              "q": "Which of the following words can be made from the letters in 'REACT'?",
-              "a": ["TRACE", "RACE", "TEAR", "CARE"],
-              "correct": 1
+              "q": "Using A=1, B=2, ..., Z=26, find the sum of 'QUEST'.",
+              "a": [
+                "83",
+                "84",
+                "81",
+                "82"
+              ],
+              "correct": 3
             }
           ]
         },
@@ -637,24 +1036,34 @@
           "group": 3,
           "questions": [
             {
-              "q": "You enter a room with two doors. One leads to treasure, one to traps. Two guards: one always lies, one tells truth. What question do you ask?",
+              "q": "Find the next letter: G, H, J, M, __",
               "a": [
-                "Ask any guard which door the other would say leads to treasure.",
-                "Pick a random door.",
-                "Ask both to open their doors.",
-                "Wait for clue."
+                "R",
+                "P",
+                "Q",
+                "S"
+              ],
+              "correct": 2
+            },
+            {
+              "q": "Find the odd one out:",
+              "a": [
+                "Sparrow",
+                "Cow",
+                "Dog",
+                "Cat"
               ],
               "correct": 0
             },
             {
-              "q": "Find the correct mirror image of the word 'IQ'.",
-              "a": ["Q\u1d62", "\ua4d8I", "I\u051a", "\u1d09q"],
-              "correct": 2
-            },
-            {
-              "q": "Find the correct mirror image of the word 'IQ'.",
-              "a": ["Q\u1d62", "\ua4d8I", "I\u051a", "\u1d09q"],
-              "correct": 2
+              "q": "Using A=1, B=2, ..., Z=26, find the sum of 'MIND'.",
+              "a": [
+                "41",
+                "39",
+                "42",
+                "40"
+              ],
+              "correct": 3
             }
           ]
         },
@@ -662,18 +1071,33 @@
           "group": 4,
           "questions": [
             {
-              "q": "Find the correct mirror image of the word 'IQ'.",
-              "a": ["Q\u1d62", "\ua4d8I", "I\u051a", "\u1d09q"],
-              "correct": 2
+              "q": "Find the next letter: A, B, D, G, __",
+              "a": [
+                "M",
+                "J",
+                "L",
+                "K"
+              ],
+              "correct": 3
             },
             {
-              "q": "Which of the following words can be made from the letters in 'REACT'?",
-              "a": ["TRACE", "RACE", "TEAR", "CARE"],
-              "correct": 1
+              "q": "Use Caesar cipher with shift +1 (e.g., FLOWER \u2192 GMPXFS). Encode 'SWORD'.",
+              "a": [
+                "TXPSE",
+                "SWORD",
+                "VZRUG",
+                "UYQTF"
+              ],
+              "correct": 0
             },
             {
-              "q": "Which of the following words can be made from the letters in 'REACT'?",
-              "a": ["TRACE", "RACE", "TEAR", "CARE"],
+              "q": "Analogy: PAINTER : BRUSH :: WRITER : __",
+              "a": [
+                "CHAIN",
+                "PEN",
+                "PAPER",
+                "SCREWDRIVER"
+              ],
               "correct": 1
             }
           ]
@@ -682,22 +1106,32 @@
           "group": 5,
           "questions": [
             {
-              "q": "Which of the following words can be made from the letters in 'REACT'?",
-              "a": ["TRACE", "RACE", "TEAR", "CARE"],
-              "correct": 1
-            },
-            {
-              "q": "Which of the following words can be made from the letters in 'REACT'?",
-              "a": ["TRACE", "RACE", "TEAR", "CARE"],
-              "correct": 1
-            },
-            {
-              "q": "You enter a room with two doors. One leads to treasure, one to traps. Two guards: one always lies, one tells truth. What question do you ask?",
+              "q": "Mapping rule: n\u00b2 + 1. What does 4 map to?",
               "a": [
-                "Ask any guard which door the other would say leads to treasure.",
-                "Pick a random door.",
-                "Ask both to open their doors.",
-                "Wait for clue."
+                "15",
+                "19",
+                "17",
+                "16"
+              ],
+              "correct": 2
+            },
+            {
+              "q": "Mapping rule: n\u00b2 + 1. What does 7 map to?",
+              "a": [
+                "50",
+                "52",
+                "48",
+                "49"
+              ],
+              "correct": 0
+            },
+            {
+              "q": "Use Caesar cipher with shift +1 (e.g., FLOWER \u2192 GMPXFS). Encode 'BRAIN'.",
+              "a": [
+                "CSBJO",
+                "EUDLQ",
+                "BRAIN",
+                "DTCKP"
               ],
               "correct": 0
             }
@@ -707,19 +1141,34 @@
           "group": 6,
           "questions": [
             {
-              "q": "Which of the following words can be made from the letters in 'REACT'?",
-              "a": ["TRACE", "RACE", "TEAR", "CARE"],
-              "correct": 1
+              "q": "Complete the geometric sequence: 6, 18, 54, 162, __",
+              "a": [
+                "486",
+                "1458",
+                "489",
+                "162"
+              ],
+              "correct": 0
             },
             {
-              "q": "Which of the following words can be made from the letters in 'REACT'?",
-              "a": ["TRACE", "RACE", "TEAR", "CARE"],
-              "correct": 1
+              "q": "Mapping rule: n\u00b2 + 1. What does 4 map to?",
+              "a": [
+                "16",
+                "15",
+                "17",
+                "19"
+              ],
+              "correct": 2
             },
             {
-              "q": "Which of the following words can be made from the letters in 'REACT'?",
-              "a": ["TRACE", "RACE", "TEAR", "CARE"],
-              "correct": 1
+              "q": "Use Caesar cipher with shift +3 (e.g., FLOWER \u2192 IORZHU). Encode 'LIGHT'.",
+              "a": [
+                "OLJKW",
+                "QNLMY",
+                "NKIJV",
+                "PMKLX"
+              ],
+              "correct": 0
             }
           ]
         },
@@ -727,19 +1176,34 @@
           "group": 7,
           "questions": [
             {
-              "q": "Which of the following words can be made from the letters in 'REACT'?",
-              "a": ["TRACE", "RACE", "TEAR", "CARE"],
-              "correct": 1
+              "q": "Use Caesar cipher with shift +3 (e.g., FLOWER \u2192 IORZHU). Encode 'APPLE'.",
+              "a": [
+                "DSSOH",
+                "FUUQJ",
+                "ETTPI",
+                "CRRNG"
+              ],
+              "correct": 0
             },
             {
-              "q": "Find the correct mirror image of the word 'IQ'.",
-              "a": ["Q\u1d62", "\ua4d8I", "I\u051a", "\u1d09q"],
-              "correct": 2
+              "q": "What gets wetter the more it dries?",
+              "a": [
+                "Towel",
+                "Rain",
+                "Sponge",
+                "Cloud"
+              ],
+              "correct": 0
             },
             {
-              "q": "Which of the following words can be made from the letters in 'REACT'?",
-              "a": ["TRACE", "RACE", "TEAR", "CARE"],
-              "correct": 1
+              "q": "Complete the geometric sequence: 5, 10, 20, 40, __",
+              "a": [
+                "80",
+                "84",
+                "40",
+                "160"
+              ],
+              "correct": 0
             }
           ]
         },
@@ -747,22 +1211,32 @@
           "group": 8,
           "questions": [
             {
-              "q": "Which of the following words can be made from the letters in 'REACT'?",
-              "a": ["TRACE", "RACE", "TEAR", "CARE"],
-              "correct": 1
-            },
-            {
-              "q": "Which of the following words can be made from the letters in 'REACT'?",
-              "a": ["TRACE", "RACE", "TEAR", "CARE"],
-              "correct": 1
-            },
-            {
-              "q": "You enter a room with two doors. One leads to treasure, one to traps. Two guards: one always lies, one tells truth. What question do you ask?",
+              "q": "Mapping rule: n\u00b2 + 1. What does 11 map to?",
               "a": [
-                "Ask any guard which door the other would say leads to treasure.",
-                "Pick a random door.",
-                "Ask both to open their doors.",
-                "Wait for clue."
+                "122",
+                "121",
+                "124",
+                "120"
+              ],
+              "correct": 0
+            },
+            {
+              "q": "Premises: (1) All birds are paper. (2) Some paper are machines. What follows?",
+              "a": [
+                "Some paper may not be machines",
+                "All birds are machines",
+                "Some birds are machines (must be true)",
+                "No birds are machines"
+              ],
+              "correct": 0
+            },
+            {
+              "q": "Complete the geometric sequence: 3, 9, 27, 81, __",
+              "a": [
+                "243",
+                "81",
+                "729",
+                "249"
               ],
               "correct": 0
             }
@@ -772,29 +1246,34 @@
           "group": 9,
           "questions": [
             {
-              "q": "You enter a room with two doors. One leads to treasure, one to traps. Two guards: one always lies, one tells truth. What question do you ask?",
+              "q": "You see me once in a minute, twice in a moment, but never in a thousand years. What am I?",
               "a": [
-                "Ask any guard which door the other would say leads to treasure.",
-                "Pick a random door.",
-                "Ask both to open their doors.",
-                "Wait for clue."
+                "The letter M",
+                "A shadow",
+                "Silence",
+                "Time"
               ],
               "correct": 0
             },
             {
-              "q": "You enter a room with two doors. One leads to treasure, one to traps. Two guards: one always lies, one tells truth. What question do you ask?",
+              "q": "Use Caesar cipher with shift +3 (e.g., FLOWER \u2192 IORZHU). Encode 'SWORD'.",
               "a": [
-                "Ask any guard which door the other would say leads to treasure.",
-                "Pick a random door.",
-                "Ask both to open their doors.",
-                "Wait for clue."
+                "XBTWI",
+                "UYQTF",
+                "WASVH",
+                "VZRUG"
               ],
-              "correct": 0
+              "correct": 3
             },
             {
-              "q": "Which of the following words can be made from the letters in 'REACT'?",
-              "a": ["TRACE", "RACE", "TEAR", "CARE"],
-              "correct": 1
+              "q": "Premises: (1) All roses are creatures. (2) Some creatures are predators. What follows?",
+              "a": [
+                "Some creatures may not be predators",
+                "All roses are predators",
+                "Some roses are predators (must be true)",
+                "No roses are predators"
+              ],
+              "correct": 0
             }
           ]
         }
@@ -807,19 +1286,34 @@
           "group": 1,
           "questions": [
             {
-              "q": "Choose the correct continuation: AB, BC, CD, __.",
-              "a": ["DE", "EF", "FG", "GH"],
-              "correct": 0
+              "q": "Find the next number in the sequence: 6, 12, 18, 24, __",
+              "a": [
+                "28",
+                "30",
+                "36",
+                "24"
+              ],
+              "correct": 1
             },
             {
-              "q": "Choose the correct continuation: AB, BC, CD, __.",
-              "a": ["DE", "EF", "FG", "GH"],
-              "correct": 0
+              "q": "Find the next letter: E, F, H, K, __",
+              "a": [
+                "N",
+                "P",
+                "Q",
+                "O"
+              ],
+              "correct": 3
             },
             {
-              "q": "If BLUE = 40, RED = 27, GREEN = ?, find GREEN.",
-              "a": ["53", "60", "64", "50"],
-              "correct": 2
+              "q": "Analogy: HAND : GLOVE :: FOOT : __",
+              "a": [
+                "WEB",
+                "SHOE",
+                "PAPER",
+                "SOCK"
+              ],
+              "correct": 3
             }
           ]
         },
@@ -827,19 +1321,34 @@
           "group": 2,
           "questions": [
             {
-              "q": "If BLUE = 40, RED = 27, GREEN = ?, find GREEN.",
-              "a": ["53", "60", "64", "50"],
-              "correct": 2
+              "q": "Using A=1, B=2, ..., Z=26, find the sum of 'LOGIC'.",
+              "a": [
+                "47",
+                "45",
+                "48",
+                "46"
+              ],
+              "correct": 3
             },
             {
-              "q": "If BLUE = 40, RED = 27, GREEN = ?, find GREEN.",
-              "a": ["53", "60", "64", "50"],
-              "correct": 2
+              "q": "Analogy: LOCK : KEY :: DOOR : __",
+              "a": [
+                "HANDLE",
+                "STICK",
+                "CHAIN",
+                "RING"
+              ],
+              "correct": 0
             },
             {
-              "q": "A code converts CAT \u2192 DBU. What is DOG?",
-              "a": ["EPI", "EPH", "DPE", "EOH"],
-              "correct": 2
+              "q": "Facing North, turn right 1 time(s). Which direction now?",
+              "a": [
+                "North",
+                "East",
+                "South",
+                "West"
+              ],
+              "correct": 1
             }
           ]
         },
@@ -847,19 +1356,34 @@
           "group": 3,
           "questions": [
             {
-              "q": "Choose the correct continuation: AB, BC, CD, __.",
-              "a": ["DE", "EF", "FG", "GH"],
-              "correct": 0
+              "q": "Facing North, turn left 3 time(s). Which direction now?",
+              "a": [
+                "North",
+                "East",
+                "South",
+                "West"
+              ],
+              "correct": 1
             },
             {
-              "q": "A code converts CAT \u2192 DBU. What is DOG?",
-              "a": ["EPI", "EPH", "DPE", "EOH"],
-              "correct": 2
+              "q": "Find the odd one out:",
+              "a": [
+                "Car",
+                "Bus",
+                "Train",
+                "Bicycle"
+              ],
+              "correct": 3
             },
             {
-              "q": "Choose the correct continuation: AB, BC, CD, __.",
-              "a": ["DE", "EF", "FG", "GH"],
-              "correct": 0
+              "q": "Find the odd one out:",
+              "a": [
+                "Train",
+                "Bicycle",
+                "Car",
+                "Bus"
+              ],
+              "correct": 1
             }
           ]
         },
@@ -867,18 +1391,33 @@
           "group": 4,
           "questions": [
             {
-              "q": "If BLUE = 40, RED = 27, GREEN = ?, find GREEN.",
-              "a": ["53", "60", "64", "50"],
-              "correct": 2
+              "q": "Complete the geometric sequence: 5, 10, 20, 40, __",
+              "a": [
+                "80",
+                "160",
+                "84",
+                "40"
+              ],
+              "correct": 0
             },
             {
-              "q": "A code converts CAT \u2192 DBU. What is DOG?",
-              "a": ["EPI", "EPH", "DPE", "EOH"],
-              "correct": 2
+              "q": "Complete the geometric sequence: 2, 6, 18, 54, __",
+              "a": [
+                "162",
+                "165",
+                "54",
+                "486"
+              ],
+              "correct": 0
             },
             {
-              "q": "Choose the correct continuation: AB, BC, CD, __.",
-              "a": ["DE", "EF", "FG", "GH"],
+              "q": "Complete the geometric sequence: 4, 8, 16, 32, __",
+              "a": [
+                "64",
+                "68",
+                "128",
+                "32"
+              ],
               "correct": 0
             }
           ]
@@ -887,18 +1426,33 @@
           "group": 5,
           "questions": [
             {
-              "q": "If BLUE = 40, RED = 27, GREEN = ?, find GREEN.",
-              "a": ["53", "60", "64", "50"],
-              "correct": 2
-            },
-            {
-              "q": "Choose the correct continuation: AB, BC, CD, __.",
-              "a": ["DE", "EF", "FG", "GH"],
+              "q": "Premises: (1) All cats are vehicles. (2) Some vehicles are notebooks. What follows?",
+              "a": [
+                "Some vehicles may not be notebooks",
+                "All cats are notebooks",
+                "Some cats are notebooks (must be true)",
+                "No cats are notebooks"
+              ],
               "correct": 0
             },
             {
-              "q": "Choose the correct continuation: AB, BC, CD, __.",
-              "a": ["DE", "EF", "FG", "GH"],
+              "q": "Find the next letter: I, J, L, O, __",
+              "a": [
+                "R",
+                "T",
+                "S",
+                "U"
+              ],
+              "correct": 2
+            },
+            {
+              "q": "Find the next letter: I, J, L, O, __",
+              "a": [
+                "S",
+                "R",
+                "T",
+                "U"
+              ],
               "correct": 0
             }
           ]
@@ -907,19 +1461,34 @@
           "group": 6,
           "questions": [
             {
-              "q": "A code converts CAT \u2192 DBU. What is DOG?",
-              "a": ["EPI", "EPH", "DPE", "EOH"],
+              "q": "Use Caesar cipher with shift +3 (e.g., FLOWER \u2192 IORZHU). Encode 'GAMES'.",
+              "a": [
+                "LFRJX",
+                "JDPHV",
+                "KEQIW",
+                "ICOGU"
+              ],
+              "correct": 1
+            },
+            {
+              "q": "Find the next letter: E, F, H, K, __",
+              "a": [
+                "P",
+                "N",
+                "O",
+                "Q"
+              ],
               "correct": 2
             },
             {
-              "q": "Choose the correct continuation: AB, BC, CD, __.",
-              "a": ["DE", "EF", "FG", "GH"],
-              "correct": 0
-            },
-            {
-              "q": "A code converts CAT \u2192 DBU. What is DOG?",
-              "a": ["EPI", "EPH", "DPE", "EOH"],
-              "correct": 2
+              "q": "Mapping rule: n\u00b2 + 1. What does 4 map to?",
+              "a": [
+                "16",
+                "17",
+                "15",
+                "19"
+              ],
+              "correct": 1
             }
           ]
         },
@@ -927,18 +1496,33 @@
           "group": 7,
           "questions": [
             {
-              "q": "A code converts CAT \u2192 DBU. What is DOG?",
-              "a": ["EPI", "EPH", "DPE", "EOH"],
-              "correct": 2
+              "q": "Premises: (1) All cats are paper. (2) Some paper are pets. What follows?",
+              "a": [
+                "Some paper may not be pets",
+                "All cats are pets",
+                "Some cats are pets (must be true)",
+                "No cats are pets"
+              ],
+              "correct": 0
             },
             {
-              "q": "If BLUE = 40, RED = 27, GREEN = ?, find GREEN.",
-              "a": ["53", "60", "64", "50"],
-              "correct": 2
+              "q": "What gets wetter the more it dries?",
+              "a": [
+                "Towel",
+                "Rain",
+                "Sponge",
+                "Cloud"
+              ],
+              "correct": 0
             },
             {
-              "q": "If BLUE = 40, RED = 27, GREEN = ?, find GREEN.",
-              "a": ["53", "60", "64", "50"],
+              "q": "Complete the geometric sequence: 6, 12, 24, 48, __",
+              "a": [
+                "100",
+                "192",
+                "96",
+                "48"
+              ],
               "correct": 2
             }
           ]
@@ -947,18 +1531,33 @@
           "group": 8,
           "questions": [
             {
-              "q": "Choose the correct continuation: AB, BC, CD, __.",
-              "a": ["DE", "EF", "FG", "GH"],
+              "q": "Premises: (1) All birds are creatures. (2) Some creatures are notebooks. What follows?",
+              "a": [
+                "Some creatures may not be notebooks",
+                "All birds are notebooks",
+                "Some birds are notebooks (must be true)",
+                "No birds are notebooks"
+              ],
               "correct": 0
             },
             {
-              "q": "A code converts CAT \u2192 DBU. What is DOG?",
-              "a": ["EPI", "EPH", "DPE", "EOH"],
-              "correct": 2
+              "q": "Premises: (1) All cars are paper. (2) Some paper are instruments. What follows?",
+              "a": [
+                "Some paper may not be instruments",
+                "All cars are instruments",
+                "Some cars are instruments (must be true)",
+                "No cars are instruments"
+              ],
+              "correct": 0
             },
             {
-              "q": "Choose the correct continuation: AB, BC, CD, __.",
-              "a": ["DE", "EF", "FG", "GH"],
+              "q": "Premises: (1) All cars are creatures. (2) Some creatures are machines. What follows?",
+              "a": [
+                "Some creatures may not be machines",
+                "All cars are machines",
+                "Some cars are machines (must be true)",
+                "No cars are machines"
+              ],
               "correct": 0
             }
           ]
@@ -967,19 +1566,34 @@
           "group": 9,
           "questions": [
             {
-              "q": "Choose the correct continuation: AB, BC, CD, __.",
-              "a": ["DE", "EF", "FG", "GH"],
+              "q": "Use Caesar cipher with shift +3 (e.g., FLOWER \u2192 IORZHU). Encode 'WORLD'.",
+              "a": [
+                "ZRUOG",
+                "BTWQI",
+                "YQTNF",
+                "ASVPH"
+              ],
               "correct": 0
             },
             {
-              "q": "If BLUE = 40, RED = 27, GREEN = ?, find GREEN.",
-              "a": ["53", "60", "64", "50"],
-              "correct": 2
+              "q": "Use Caesar cipher with shift +3 (e.g., FLOWER \u2192 IORZHU). Encode 'WORLD'.",
+              "a": [
+                "ZRUOG",
+                "ASVPH",
+                "YQTNF",
+                "BTWQI"
+              ],
+              "correct": 0
             },
             {
-              "q": "A code converts CAT \u2192 DBU. What is DOG?",
-              "a": ["EPI", "EPH", "DPE", "EOH"],
-              "correct": 2
+              "q": "Mapping rule: n\u00b2 + 1. What does 9 map to?",
+              "a": [
+                "84",
+                "81",
+                "80",
+                "82"
+              ],
+              "correct": 3
             }
           ]
         }
@@ -992,29 +1606,34 @@
           "group": 1,
           "questions": [
             {
-              "q": "Which statement is always true?",
+              "q": "Using A=1, B=2, ..., Z=26, find the sum of 'LEVEL'.",
               "a": [
-                "All humans need air to live",
-                "Some fish walk on land",
-                "Every cat can fly",
-                "None of these"
+                "58",
+                "57",
+                "55",
+                "56"
               ],
-              "correct": 0
+              "correct": 3
             },
             {
-              "q": "If 1=3, 2=3, 3=5, 4=4, 5=4, then 6=?",
-              "a": ["3", "4", "5", "6"],
+              "q": "Find the odd one out:",
+              "a": [
+                "Iron",
+                "Sand",
+                "Silver",
+                "Copper"
+              ],
               "correct": 1
             },
             {
-              "q": "Which statement is always true?",
+              "q": "Find the odd one out:",
               "a": [
-                "All humans need air to live",
-                "Some fish walk on land",
-                "Every cat can fly",
-                "None of these"
+                "Cow",
+                "Dog",
+                "Sparrow",
+                "Cat"
               ],
-              "correct": 0
+              "correct": 2
             }
           ]
         },
@@ -1022,18 +1641,33 @@
           "group": 2,
           "questions": [
             {
-              "q": "If 1=3, 2=3, 3=5, 4=4, 5=4, then 6=?",
-              "a": ["3", "4", "5", "6"],
+              "q": "Using A=1, B=2, ..., Z=26, find the sum of 'BRAIN'.",
+              "a": [
+                "46",
+                "44",
+                "43",
+                "45"
+              ],
               "correct": 1
             },
             {
-              "q": "Five people A, B, C, D, E are standing in line. A is ahead of B but behind C. D is behind E. Who is in front?",
-              "a": ["A", "B", "C", "D"],
-              "correct": 2
+              "q": "Find the next number in the sequence: 4, 9, 14, 19, __",
+              "a": [
+                "24",
+                "29",
+                "19",
+                "22"
+              ],
+              "correct": 0
             },
             {
-              "q": "Five people A, B, C, D, E are standing in line. A is ahead of B but behind C. D is behind E. Who is in front?",
-              "a": ["A", "B", "C", "D"],
+              "q": "Facing North, turn right 2 time(s). Which direction now?",
+              "a": [
+                "North",
+                "East",
+                "South",
+                "West"
+              ],
               "correct": 2
             }
           ]
@@ -1042,24 +1676,34 @@
           "group": 3,
           "questions": [
             {
-              "q": "If 1=3, 2=3, 3=5, 4=4, 5=4, then 6=?",
-              "a": ["3", "4", "5", "6"],
-              "correct": 1
+              "q": "Facing North, turn left 2 time(s). Which direction now?",
+              "a": [
+                "North",
+                "East",
+                "South",
+                "West"
+              ],
+              "correct": 2
             },
             {
-              "q": "Which statement is always true?",
+              "q": "Facing West, turn left 3 time(s). Which direction now?",
               "a": [
-                "All humans need air to live",
-                "Some fish walk on land",
-                "Every cat can fly",
-                "None of these"
+                "North",
+                "East",
+                "South",
+                "West"
               ],
               "correct": 0
             },
             {
-              "q": "If 1=3, 2=3, 3=5, 4=4, 5=4, then 6=?",
-              "a": ["3", "4", "5", "6"],
-              "correct": 1
+              "q": "Find the next letter: E, F, H, K, __",
+              "a": [
+                "O",
+                "Q",
+                "N",
+                "P"
+              ],
+              "correct": 0
             }
           ]
         },
@@ -1067,24 +1711,34 @@
           "group": 4,
           "questions": [
             {
-              "q": "If 1=3, 2=3, 3=5, 4=4, 5=4, then 6=?",
-              "a": ["3", "4", "5", "6"],
-              "correct": 1
-            },
-            {
-              "q": "Which statement is always true?",
+              "q": "Analogy: BIRD : NEST :: BEE : __",
               "a": [
-                "All humans need air to live",
-                "Some fish walk on land",
-                "Every cat can fly",
-                "None of these"
+                "HIVE",
+                "RING",
+                "STICK",
+                "WEB"
               ],
               "correct": 0
             },
             {
-              "q": "Five people A, B, C, D, E are standing in line. A is ahead of B but behind C. D is behind E. Who is in front?",
-              "a": ["A", "B", "C", "D"],
-              "correct": 2
+              "q": "Analogy: KING : CROWN :: JUDGE : __",
+              "a": [
+                "RING",
+                "GAVEL",
+                "STICK",
+                "MAP"
+              ],
+              "correct": 1
+            },
+            {
+              "q": "Find the next letter: K, L, N, Q, __",
+              "a": [
+                "T",
+                "W",
+                "V",
+                "U"
+              ],
+              "correct": 3
             }
           ]
         },
@@ -1092,24 +1746,34 @@
           "group": 5,
           "questions": [
             {
-              "q": "Which statement is always true?",
+              "q": "Find the next letter: D, E, G, J, __",
               "a": [
-                "All humans need air to live",
-                "Some fish walk on land",
-                "Every cat can fly",
-                "None of these"
+                "N",
+                "O",
+                "M",
+                "P"
               ],
               "correct": 0
             },
             {
-              "q": "If 1=3, 2=3, 3=5, 4=4, 5=4, then 6=?",
-              "a": ["3", "4", "5", "6"],
-              "correct": 1
+              "q": "Analogy: BIRD : NEST :: BEE : __",
+              "a": [
+                "MAP",
+                "STICK",
+                "CHAIN",
+                "HIVE"
+              ],
+              "correct": 3
             },
             {
-              "q": "If 1=3, 2=3, 3=5, 4=4, 5=4, then 6=?",
-              "a": ["3", "4", "5", "6"],
-              "correct": 1
+              "q": "Find the next letter: K, L, N, Q, __",
+              "a": [
+                "U",
+                "T",
+                "V",
+                "W"
+              ],
+              "correct": 0
             }
           ]
         },
@@ -1117,23 +1781,33 @@
           "group": 6,
           "questions": [
             {
-              "q": "Five people A, B, C, D, E are standing in line. A is ahead of B but behind C. D is behind E. Who is in front?",
-              "a": ["A", "B", "C", "D"],
-              "correct": 2
-            },
-            {
-              "q": "Which statement is always true?",
+              "q": "Premises: (1) All cats are creatures. (2) Some creatures are machines. What follows?",
               "a": [
-                "All humans need air to live",
-                "Some fish walk on land",
-                "Every cat can fly",
-                "None of these"
+                "Some creatures may not be machines",
+                "All cats are machines",
+                "Some cats are machines (must be true)",
+                "No cats are machines"
               ],
               "correct": 0
             },
             {
-              "q": "Five people A, B, C, D, E are standing in line. A is ahead of B but behind C. D is behind E. Who is in front?",
-              "a": ["A", "B", "C", "D"],
+              "q": "Find the next letter: C, D, F, I, __",
+              "a": [
+                "O",
+                "M",
+                "N",
+                "L"
+              ],
+              "correct": 1
+            },
+            {
+              "q": "Use Caesar cipher with shift +3 (e.g., FLOWER \u2192 IORZHU). Encode 'GAMES'.",
+              "a": [
+                "KEQIW",
+                "LFRJX",
+                "JDPHV",
+                "ICOGU"
+              ],
               "correct": 2
             }
           ]
@@ -1142,29 +1816,34 @@
           "group": 7,
           "questions": [
             {
-              "q": "Which statement is always true?",
+              "q": "I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?",
               "a": [
-                "All humans need air to live",
-                "Some fish walk on land",
-                "Every cat can fly",
-                "None of these"
+                "Echo",
+                "Song",
+                "Whistle",
+                "Leaf"
               ],
               "correct": 0
             },
             {
-              "q": "Which statement is always true?",
+              "q": "Use Caesar cipher with shift +3 (e.g., FLOWER \u2192 IORZHU). Encode 'SWORD'.",
               "a": [
-                "All humans need air to live",
-                "Some fish walk on land",
-                "Every cat can fly",
-                "None of these"
+                "VZRUG",
+                "UYQTF",
+                "WASVH",
+                "XBTWI"
               ],
               "correct": 0
             },
             {
-              "q": "Five people A, B, C, D, E are standing in line. A is ahead of B but behind C. D is behind E. Who is in front?",
-              "a": ["A", "B", "C", "D"],
-              "correct": 2
+              "q": "Use Caesar cipher with shift +1 (e.g., FLOWER \u2192 GMPXFS). Encode 'SWORD'.",
+              "a": [
+                "SWORD",
+                "VZRUG",
+                "UYQTF",
+                "TXPSE"
+              ],
+              "correct": 3
             }
           ]
         },
@@ -1172,19 +1851,34 @@
           "group": 8,
           "questions": [
             {
-              "q": "Five people A, B, C, D, E are standing in line. A is ahead of B but behind C. D is behind E. Who is in front?",
-              "a": ["A", "B", "C", "D"],
-              "correct": 2
+              "q": "Use Caesar cipher with shift +3 (e.g., FLOWER \u2192 IORZHU). Encode 'SWORD'.",
+              "a": [
+                "UYQTF",
+                "XBTWI",
+                "WASVH",
+                "VZRUG"
+              ],
+              "correct": 3
             },
             {
-              "q": "If 1=3, 2=3, 3=5, 4=4, 5=4, then 6=?",
-              "a": ["3", "4", "5", "6"],
-              "correct": 1
+              "q": "What gets wetter the more it dries?",
+              "a": [
+                "Towel",
+                "Rain",
+                "Sponge",
+                "Cloud"
+              ],
+              "correct": 0
             },
             {
-              "q": "If 1=3, 2=3, 3=5, 4=4, 5=4, then 6=?",
-              "a": ["3", "4", "5", "6"],
-              "correct": 1
+              "q": "Two doors: treasure and trap; one guard lies, one tells truth. One question to one guard \u2014 what do you ask?",
+              "a": [
+                "Ask: Which door would the other guard say is treasure? Choose the opposite.",
+                "Ask: Are you the liar? If yes, choose his door.",
+                "Ask both to open their doors and watch.",
+                "Pick randomly to save time."
+              ],
+              "correct": 0
             }
           ]
         },
@@ -1192,18 +1886,33 @@
           "group": 9,
           "questions": [
             {
-              "q": "If 1=3, 2=3, 3=5, 4=4, 5=4, then 6=?",
-              "a": ["3", "4", "5", "6"],
-              "correct": 1
+              "q": "Use Caesar cipher with shift +2 (e.g., FLOWER \u2192 HNQYGT). Encode 'WORLD'.",
+              "a": [
+                "ASVPH",
+                "ZRUOG",
+                "XPSME",
+                "YQTNF"
+              ],
+              "correct": 3
             },
             {
-              "q": "If 1=3, 2=3, 3=5, 4=4, 5=4, then 6=?",
-              "a": ["3", "4", "5", "6"],
-              "correct": 1
+              "q": "What gets wetter the more it dries?",
+              "a": [
+                "Towel",
+                "Rain",
+                "Sponge",
+                "Cloud"
+              ],
+              "correct": 0
             },
             {
-              "q": "If 1=3, 2=3, 3=5, 4=4, 5=4, then 6=?",
-              "a": ["3", "4", "5", "6"],
+              "q": "Use Caesar cipher with shift +1 (e.g., FLOWER \u2192 GMPXFS). Encode 'GAMES'.",
+              "a": [
+                "ICOGU",
+                "HBNFT",
+                "JDPHV",
+                "GAMES"
+              ],
               "correct": 1
             }
           ]
