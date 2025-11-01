@@ -1,19 +1,25 @@
+// src/app/phaser/components/phaser/BeerDropScene.ts
+"use client"
+
 import * as Phaser from "phaser"
 
+// --- UI layout ---
 const UI_BAR_H = 48
 const RIGHT_PANEL_W = 280
 const DROP_ZONE_H = 40
 
+// --- Gameplay tuning ---
 const START_SPEED = 120
-const SPEED_PER_POINT = 4
+const SPEED_PER_POINT = 2
 
 const BASE_SPAWN_MS = 2000
 const MIN_SPAWN_MS = 350
-const SPAWN_ACCEL_PER_POINT = 5
+const SPAWN_ACCEL_PER_POINT = 25
 
 const MAX_LIVES = 3
-const SCORE_STEP = 2
+const SCORE_STEP = 10
 
+// --- Assets ---
 const ASSETS = {
   beer: "/images/beer.png",
   basket: "/images/basket.png",
@@ -42,38 +48,39 @@ const GIRLS: string[][] = [
   ],
 ]
 
-// const GIRLS: string[][] = [
-//   [
-//     "/images/adult-images/placeholders/1.png",
-//     "/images/adult-images/placeholders/2.png",
-//     "/images/adult-images/placeholders/3.png",
-//     "/images/adult-images/placeholders/4.png",
-//     "/images/adult-images/placeholders/5.png",
-//     "/images/adult-images/placeholders/6.png",
-//     "/images/adult-images/placeholders/7.png",
-//     "/images/adult-images/placeholders/8.png",
-//     "/images/adult-images/placeholders/9.png",
-//   ],
-// ]
 export default class BeerDropScene extends Phaser.Scene {
+  // physics
   private beers!: Phaser.Physics.Arcade.Group
   private basket!: Phaser.Physics.Arcade.Image
+
+  // input
   private cursors!: Phaser.Types.Input.Keyboard.CursorKeys
   private keyA!: Phaser.Input.Keyboard.Key
   private keyD!: Phaser.Input.Keyboard.Key
 
-  private score = 0
-  private lives = MAX_LIVES
-  private spawnTimer?: Phaser.Time.TimerEvent
-
+  // ui
   private scoreText!: Phaser.GameObjects.Text
   private livesText!: Phaser.GameObjects.Text
   private rightImage!: Phaser.GameObjects.Image
 
+  // game state
   private selectedGirl = 0
+  private score = 0
+  private lives = MAX_LIVES
+  private isGameOver = false
+  private spawnTimer?: Phaser.Time.TimerEvent
 
   constructor() {
     super("BeerDropScene")
+  }
+
+  init() {
+    // Reset primitive state only (no touching groups/timers that may not exist yet)
+    this.isGameOver = false
+    this.score = 0
+    this.lives = MAX_LIVES
+    this.spawnTimer?.remove(false)
+    this.spawnTimer = undefined
   }
 
   private progressKey(idx: number) {
@@ -81,26 +88,32 @@ export default class BeerDropScene extends Phaser.Scene {
   }
 
   preload() {
-    // --- Pick girl before loading assets ---
+    // Pick girl (optional ?set=0 or ?set=1 override)
     const params = new URLSearchParams(window.location.search)
     const force = params.get("set")
     if (force === "0" || force === "1") this.selectedGirl = Number(force)
     else this.selectedGirl = Phaser.Math.Between(0, GIRLS.length - 1)
 
-    // --- Load only chosen girl ---
+    // Load only chosen girl's sequence
     const chosen = GIRLS[this.selectedGirl]
     chosen.forEach((url, idx) => {
       const key = this.progressKey(idx)
       if (!this.textures.exists(key)) this.load.image(key, url)
     })
 
-    // --- Core assets ---
+    // Core assets
     if (!this.textures.exists("beer")) this.load.image("beer", ASSETS.beer)
     if (!this.textures.exists("basket"))
       this.load.image("basket", ASSETS.basket)
+
+    // load bg music
+    this.load.audio("bg-music", "/music/song1.mp3")
   }
 
   create() {
+    const music = this.sound.add("bg-music", { loop: true, volume: 1 })
+    music.play()
+
     const { width, height } = this.scale
     this.physics.world.setBounds(0, 0, width, height)
 
@@ -126,7 +139,7 @@ export default class BeerDropScene extends Phaser.Scene {
       DROP_ZONE_H
     )
 
-    // --- Text ---
+    // --- UI Text ---
     this.scoreText = this.text(12, 10, "Score: 0")
     this.livesText = this.text(
       width / 2 - 40,
@@ -142,7 +155,7 @@ export default class BeerDropScene extends Phaser.Scene {
       .on("pointerup", () => window.dispatchEvent(new Event("GO_TO_MENU")))
     this.text(btn.x, btn.y, "Go to menu").setOrigin(0.5)
 
-    // --- Right image ---
+    // --- Right image (start at first frame) ---
     this.rightImage = this.add
       .image(width - RIGHT_PANEL_W / 2, height / 2, this.progressKey(0))
       .setOrigin(0.5)
@@ -159,7 +172,7 @@ export default class BeerDropScene extends Phaser.Scene {
     this.keyA = this.input.keyboard!.addKey(Phaser.Input.Keyboard.KeyCodes.A)
     this.keyD = this.input.keyboard!.addKey(Phaser.Input.Keyboard.KeyCodes.D)
 
-    // --- Beers group ---
+    // --- Group (fresh each run) ---
     this.beers = this.physics.add.group({
       classType: Phaser.Physics.Arcade.Image,
       collideWorldBounds: false,
@@ -177,9 +190,17 @@ export default class BeerDropScene extends Phaser.Scene {
 
     // --- Start spawning ---
     this.recreateSpawnTimer(BASE_SPAWN_MS)
+
+    // --- Restart/Menu keys (fresh per run) ---
+    const kM = this.input.keyboard!.addKey(Phaser.Input.Keyboard.KeyCodes.M)
+    const kR = this.input.keyboard!.addKey(Phaser.Input.Keyboard.KeyCodes.R)
+    kM.once("down", () => window.dispatchEvent(new Event("GO_TO_MENU")))
+    kR.once("down", () => this.scene.restart())
   }
 
   update() {
+    if (this.isGameOver) return
+
     const { width, height } = this.scale
 
     // Basket control
@@ -187,7 +208,7 @@ export default class BeerDropScene extends Phaser.Scene {
     let vx = 0
     if (this.cursors.left?.isDown || this.keyA.isDown) vx -= speed
     if (this.cursors.right?.isDown || this.keyD.isDown) vx += speed
-    this!.basket!.setVelocityX(vx)
+    this.basket.setVelocityX(vx)
 
     const half = this.basket.displayWidth * 0.5
     this.basket.x = Phaser.Math.Clamp(
@@ -203,7 +224,8 @@ export default class BeerDropScene extends Phaser.Scene {
     }
   }
 
-  // --- Game logic ---
+  // ---------------- helpers & logic ----------------
+
   private text(x: number, y: number, t: string) {
     return this.add.text(x, y, t, {
       fontFamily: "Inter, system-ui, Arial, sans-serif",
@@ -213,6 +235,7 @@ export default class BeerDropScene extends Phaser.Scene {
   }
 
   private spawnBeer() {
+    if (this.isGameOver) return
     const { width } = this.scale
     const playW = width - RIGHT_PANEL_W
     const x = Phaser.Math.Between(18, playW - 18)
@@ -225,7 +248,9 @@ export default class BeerDropScene extends Phaser.Scene {
   }
 
   private handleCatch(beer: Phaser.Physics.Arcade.Image) {
+    if (this.isGameOver) return
     beer.destroy()
+
     this.score += 1
     this.scoreText.setText(`Score: ${this.score}`)
     this.updateRightImage()
@@ -233,14 +258,23 @@ export default class BeerDropScene extends Phaser.Scene {
   }
 
   private handleMiss(beer: Phaser.Physics.Arcade.Image) {
+    if (this.isGameOver) return
     beer.destroy()
+
     this.lives = Math.max(0, this.lives - 1)
     this.livesText.setText(`Life: ${"♥".repeat(this.lives)}`)
     if (this.lives <= 0) this.gameOver()
   }
 
   private gameOver() {
+    if (this.isGameOver) return
+    this.isGameOver = true
+
+    // stop future spawns & kill existing beers
     this.spawnTimer?.remove(false)
+    this.spawnTimer = undefined
+    this.beers.clear(true, true)
+
     const { width, height } = this.scale
     this.add.rectangle(0, 0, width, height, 0x000000, 0.55).setOrigin(0)
     this.text(width / 2, height / 2 - 10, "Game Over")
@@ -251,11 +285,6 @@ export default class BeerDropScene extends Phaser.Scene {
       height / 2 + 24,
       "Press M to Menu / R to Restart"
     ).setOrigin(0.5)
-
-    const kM = this.input.keyboard!.addKey(Phaser.Input.Keyboard.KeyCodes.M)
-    const kR = this.input.keyboard!.addKey(Phaser.Input.Keyboard.KeyCodes.R)
-    kM.once("down", () => window.dispatchEvent(new Event("GO_TO_MENU")))
-    kR.once("down", () => this.scene.restart())
   }
 
   private updateRightImage() {
@@ -275,8 +304,8 @@ export default class BeerDropScene extends Phaser.Scene {
     const src = this.rightImage.texture.getSourceImage() as
       | HTMLImageElement
       | HTMLCanvasElement
-    const sw = src?.width || 1
-    const sh = src?.height || 1
+    const sw = (src as any)?.width || 1
+    const sh = (src as any)?.height || 1
     const s = Math.min(targetW / sw, targetH / sh)
     this.rightImage
       .setScale(s)

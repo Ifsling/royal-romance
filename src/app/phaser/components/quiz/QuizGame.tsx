@@ -91,6 +91,17 @@ export default function QuizPage() {
   )
 
   useEffect(() => {
+    const audio = new Audio("/music/song3.mp3")
+    audio.loop = true
+    audio.volume = 1
+    audio.play().catch(() => {})
+    return () => {
+      audio.pause()
+      audio.currentTime = 0
+    }
+  }, [])
+
+  useEffect(() => {
     const load = async () => {
       try {
         const res = await fetch("/quiz-sets.json", { cache: "no-store" })

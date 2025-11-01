@@ -63,9 +63,15 @@ export default class MazeScene extends Phaser.Scene {
     // Player & posts
     this.load.image(PLAYER_KEY, PLAYER_URL)
     POST_KEYS.forEach((k, i) => this.load.image(k, POST_URLS[i]))
+
+    // load bg music
+    this.load.audio("bg-music", "/music/song2.mp3")
   }
 
   create() {
+    const music = this.sound.add("bg-music", { loop: true, volume: 1 })
+    music.play()
+
     // --- Build map
     this.map = this.make.tilemap({ key: MAP_KEY })
     // name "tileset" must match tileset.name inside TMJ
