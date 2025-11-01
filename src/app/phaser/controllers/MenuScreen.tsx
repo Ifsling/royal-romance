@@ -45,7 +45,7 @@ export default function MenuScreen({ onSelectGame }: MenuScreenProps) {
         <img
           src="/images/logos/text-logo.png"
           alt="Game Logo"
-          className="w-128 h-auto"
+          className="w-[80vw] max-w-[500px] h-auto"
         />
       </div>
 
